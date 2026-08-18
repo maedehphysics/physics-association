@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -56,8 +55,6 @@
             width: 62px;
             height: 62px;
 
-            background: white;
-
             border-radius: 50%;
 
             display: flex;
@@ -70,8 +67,9 @@
 
             flex-shrink: 0;
 
-            box-shadow:
-                0 0 20px rgba(86,197,255,0.25);
+            background: transparent;
+
+            box-shadow: 0 0 20px rgba(86,197,255,0.25);
         }
 
         .brand-logo img {
@@ -108,7 +106,6 @@
         nav a:hover {
             color: #56c5ff;
         }
-
 
         /* ================= HERO ================= */
 
@@ -229,10 +226,9 @@
             background: #edf6ff;
         }
 
+        /* ================= HERO LOGO ================= */
 
-        /* ================= ATOM ================= */
-
-        .atom-container {
+        .hero-logo-container {
             width: 390px;
             height: 390px;
 
@@ -241,66 +237,42 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            z-index: 1;
         }
 
-        .atom {
-            width: 260px;
-            height: 260px;
+        .hero-logo {
+            width: 330px;
+            height: 330px;
 
-            border: 2px solid rgba(22,136,201,0.4);
+            object-fit: contain;
 
-            border-radius: 50%;
+            display: block;
 
-            position: relative;
+            background: transparent;
 
-            transform: rotate(30deg);
+            filter: drop-shadow(
+                0 15px 30px rgba(22,136,201,0.18)
+            );
+
+            animation: floatingLogo 5s ease-in-out infinite;
         }
 
-        .orbit {
-            position: absolute;
+        @keyframes floatingLogo {
 
-            width: 260px;
-            height: 100px;
+            0% {
+                transform: translateY(0);
+            }
 
-            border: 2px solid rgba(22,136,201,0.4);
+            50% {
+                transform: translateY(-12px);
+            }
 
-            border-radius: 50%;
+            100% {
+                transform: translateY(0);
+            }
 
-            top: 78px;
-            left: 0;
         }
-
-        .orbit.one {
-            transform: rotate(60deg);
-        }
-
-        .orbit.two {
-            transform: rotate(-60deg);
-        }
-
-        .nucleus {
-            position: absolute;
-
-            width: 70px;
-            height: 70px;
-
-            border-radius: 50%;
-
-            background: #1688c9;
-
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 31px;
-            font-weight: bold;
-
-            box-shadow:
-                0 0 40px rgba(22,136,201,0.4);
-        }
-
 
         /* ================= GENERAL SECTIONS ================= */
 
@@ -332,7 +304,6 @@
             color: #718096;
             margin-top: 7px;
         }
-
 
         /* ================= ACTIVITIES ================= */
 
@@ -393,7 +364,6 @@
             color: #68778a;
             font-size: 14px;
         }
-
 
         /* ================= MEMBERS ================= */
 
@@ -521,7 +491,6 @@
             border-color: #56c5ff;
         }
 
-
         /* ================= COLLABORATORS ================= */
 
         .collaborators {
@@ -586,7 +555,6 @@
             font-size: 20px;
         }
 
-
         /* ================= ABOUT ================= */
 
         .about {
@@ -615,7 +583,6 @@
 
             line-height: 2.3;
         }
-
 
         /* ================= STATS ================= */
 
@@ -655,7 +622,6 @@
             font-size: 13px;
         }
 
-
         /* ================= FOOTER ================= */
 
         footer {
@@ -669,7 +635,6 @@
 
             font-size: 13px;
         }
-
 
         /* ================= MOBILE ================= */
 
@@ -702,9 +667,16 @@
                 justify-content: center;
             }
 
-            .atom-container {
+            .hero-logo-container {
                 width: 300px;
                 height: 300px;
+
+                margin-top: 40px;
+            }
+
+            .hero-logo {
+                width: 260px;
+                height: 260px;
             }
 
             .cards {
@@ -721,7 +693,6 @@
                     repeat(2, 1fr);
             }
         }
-
 
         @media (max-width: 500px) {
 
@@ -740,6 +711,16 @@
 
             .hero p {
                 font-size: 15px;
+            }
+
+            .hero-logo-container {
+                width: 260px;
+                height: 260px;
+            }
+
+            .hero-logo {
+                width: 220px;
+                height: 220px;
             }
 
             .members-grid {
@@ -772,7 +753,7 @@
         <div class="brand-logo">
 
             <img
-                src="/static/images/logo.jpg"
+                src="{{ url_for('static', filename='images/logo.png') }}"
                 alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
             >
 
@@ -828,7 +809,6 @@
 </header>
 
 
-
 <!-- ================= HERO ================= -->
 
 <section class="hero">
@@ -847,9 +827,9 @@
         </h2>
 
         <p>
-            انجمن علمی فیزیک دانشگاه شهرکرد بستری برای
-            فعالیت‌های علمی، پژوهشی، آموزشی و دانشجویی است؛
-            جایی برای یادگیری، تجربه، ایده‌پردازی و ساختن آینده‌ای علمی.
+            انجمن علمی فیزیک دانشگاه شهرکرد بستری برای فعالیت‌های علمی،
+            پژوهشی، آموزشی و دانشجویی است؛ جایی برای یادگیری، تجربه،
+            ایده‌پردازی و ساختن آینده‌ای علمی.
         </p>
 
         <div class="hero-buttons">
@@ -873,26 +853,19 @@
     </div>
 
 
-    <div class="atom-container">
+    <!-- لوگوی انجمن به جای اتم -->
 
-        <div class="atom">
+    <div class="hero-logo-container">
 
-            <div class="orbit"></div>
-
-            <div class="orbit one"></div>
-
-            <div class="orbit two"></div>
-
-        </div>
-
-        <div class="nucleus">
-            Φ
-        </div>
+        <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
+            class="hero-logo"
+        >
 
     </div>
 
 </section>
-
 
 
 <!-- ================= ACTIVITIES ================= -->
@@ -929,8 +902,8 @@
             </h3>
 
             <p>
-                ایجاد فرصت برای مشارکت دانشجویان
-                در فعالیت‌های پژوهشی و علمی حوزه فیزیک.
+                ایجاد فرصت برای مشارکت دانشجویان در فعالیت‌های پژوهشی
+                و علمی حوزه فیزیک.
             </p>
 
         </div>
@@ -947,8 +920,8 @@
             </h3>
 
             <p>
-                برگزاری کارگاه‌ها، دوره‌های آموزشی،
-                نشست‌های تخصصی و برنامه‌های علمی.
+                برگزاری کارگاه‌ها، دوره‌های آموزشی، نشست‌های تخصصی
+                و برنامه‌های علمی.
             </p>
 
         </div>
@@ -965,8 +938,8 @@
             </h3>
 
             <p>
-                تولید و انتشار محتوای علمی،
-                مقالات، بولتن‌ها و نشریات دانشجویی.
+                تولید و انتشار محتوای علمی، مقالات، بولتن‌ها
+                و نشریات دانشجویی.
             </p>
 
         </div>
@@ -983,8 +956,8 @@
             </h3>
 
             <p>
-                برگزاری مسابقات و چالش‌های علمی
-                برای افزایش انگیزه و خلاقیت دانشجویان.
+                برگزاری مسابقات و چالش‌های علمی برای افزایش انگیزه
+                و خلاقیت دانشجویان.
             </p>
 
         </div>
@@ -1001,8 +974,8 @@
             </h3>
 
             <p>
-                فراهم کردن بستری برای ارائه ایده‌ها
-                و پروژه‌های علمی دانشجویان.
+                فراهم کردن بستری برای ارائه ایده‌ها و پروژه‌های
+                علمی دانشجویان.
             </p>
 
         </div>
@@ -1019,8 +992,8 @@
             </h3>
 
             <p>
-                معرفی جذاب و کاربردی علم فیزیک
-                به دانشجویان و علاقه‌مندان.
+                معرفی جذاب و کاربردی علم فیزیک به دانشجویان
+                و علاقه‌مندان.
             </p>
 
         </div>
@@ -1028,7 +1001,6 @@
     </div>
 
 </section>
-
 
 
 <!-- ================= MEMBERS ================= -->
@@ -1052,7 +1024,7 @@
     </div>
 
 
-    <!-- دبیر انجمن -->
+    <!-- دبیر -->
 
     <div class="members-group">
 
@@ -1104,7 +1076,7 @@
                 </h3>
 
                 <span>
-                    عضو اصلی
+                    نائب دبیر
                 </span>
 
             </div>
@@ -1121,7 +1093,7 @@
                 </h3>
 
                 <span>
-                    عضو اصلی
+                    مسئول پژوهشی
                 </span>
 
             </div>
@@ -1138,7 +1110,7 @@
                 </h3>
 
                 <span>
-                    عضو اصلی
+                    مسئول آموزشی
                 </span>
 
             </div>
@@ -1155,7 +1127,7 @@
                 </h3>
 
                 <span>
-                    عضو اصلی
+                    مسئول نشریات
                 </span>
 
             </div>
@@ -1215,7 +1187,6 @@
 </section>
 
 
-
 <!-- ================= COLLABORATORS ================= -->
 
 <section
@@ -1264,7 +1235,6 @@
 </section>
 
 
-
 <!-- ================= ABOUT ================= -->
 
 <section
@@ -1291,14 +1261,16 @@
 
     <div class="about-content">
 
-        انجمن علمی فیزیک دانشگاه شهرکرد با هدف
-        ایجاد بستری پویا برای فعالیت‌های علمی،
-        آموزشی، پژوهشی و فرهنگی دانشجویان شکل گرفته است.
+        انجمن علمی فیزیک دانشگاه شهرکرد با هدف ایجاد بستری پویا
+        برای فعالیت‌های علمی، آموزشی، پژوهشی و فرهنگی دانشجویان
+        شکل گرفته است.
 
-        این انجمن تلاش می‌کند با برگزاری برنامه‌های
-        علمی، کارگاه‌ها، نشست‌ها، مسابقات، فعالیت‌های
-        پژوهشی و تولید محتوای علمی، زمینه رشد و
-        شکوفایی استعدادهای دانشجویان را فراهم کند.
+        <br><br>
+
+        این انجمن تلاش می‌کند با برگزاری برنامه‌های علمی،
+        کارگاه‌ها، نشست‌ها، مسابقات، فعالیت‌های پژوهشی و تولید
+        محتوای علمی، زمینه رشد و شکوفایی استعدادهای دانشجویان
+        را فراهم کند.
 
     </div>
 
@@ -1361,7 +1333,6 @@
 </section>
 
 
-
 <!-- ================= FOOTER ================= -->
 
 <footer>
@@ -1380,4 +1351,3 @@
 </body>
 
 </html>
-```
