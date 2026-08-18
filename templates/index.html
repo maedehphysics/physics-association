@@ -2,15 +2,12 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>انجمن علمی فیزیک دانشگاه شهرکرد</title>
 
 <style>
-
-/* ================= RESET ================= */
 
 *{
     margin:0;
@@ -29,11 +26,9 @@ body{
     line-height:1.8;
 }
 
-
 /* ================= HEADER ================= */
 
 header{
-
     position:sticky;
     top:0;
     z-index:1000;
@@ -51,14 +46,12 @@ header{
 }
 
 .brand{
-
     display:flex;
     align-items:center;
     gap:14px;
 }
 
 .brand-logo{
-
     width:62px;
     height:62px;
 
@@ -66,19 +59,16 @@ header{
     align-items:center;
     justify-content:center;
 
-    overflow:hidden;
-
     flex-shrink:0;
 
     background:transparent;
 
     border:none;
 
-    box-shadow:none;
+    overflow:hidden;
 }
 
 .brand-logo img{
-
     width:100%;
     height:100%;
 
@@ -90,36 +80,28 @@ header{
 }
 
 .brand h1{
-
     color:white;
     font-size:19px;
 }
 
 .brand span{
-
     color:#a9bdd5;
     font-size:12px;
 }
 
 nav{
-
     display:flex;
     gap:25px;
 }
 
 nav a{
-
     color:#dce8f5;
-
     text-decoration:none;
-
     font-size:14px;
-
     transition:.3s;
 }
 
 nav a:hover{
-
     color:#56c5ff;
 }
 
@@ -127,51 +109,41 @@ nav a:hover{
 /* ================= HERO ================= */
 
 .hero{
-
     min-height:650px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     padding:80px 8%;
 
     position:relative;
-
     overflow:hidden;
 
     background:
-
-    radial-gradient(
-        circle at 80% 30%,
-        rgba(40,160,220,.18),
-        transparent 30%
-    ),
-
-    radial-gradient(
-        circle at 20% 80%,
-        rgba(60,100,200,.12),
-        transparent 30%
-    ),
-
-    linear-gradient(
-        135deg,
-        #edf6ff,
-        #ffffff
-    );
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(40,160,220,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(60,100,200,.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #edf6ff,
+            #ffffff
+        );
 }
 
 .hero-content{
-
     max-width:680px;
-
     z-index:2;
 }
 
 .small-title{
-
     display:inline-block;
 
     padding:7px 15px;
@@ -190,9 +162,7 @@ nav a:hover{
 }
 
 .hero h2{
-
     font-size:52px;
-
     line-height:1.45;
 
     color:#07152e;
@@ -201,12 +171,10 @@ nav a:hover{
 }
 
 .hero h2 span{
-
     color:#1688c9;
 }
 
 .hero p{
-
     color:#5b6b7d;
 
     font-size:17px;
@@ -215,16 +183,13 @@ nav a:hover{
 }
 
 .hero-buttons{
-
     margin-top:32px;
 
     display:flex;
-
     gap:14px;
 }
 
 .btn{
-
     padding:12px 24px;
 
     border-radius:9px;
@@ -239,9 +204,7 @@ nav a:hover{
 }
 
 .primary{
-
     background:#1688c9;
-
     color:white;
 
     box-shadow:
@@ -249,23 +212,17 @@ nav a:hover{
 }
 
 .primary:hover{
-
     transform:translateY(-3px);
-
     background:#0d6fa8;
 }
 
 .secondary{
-
     border:1px solid #b8cde0;
-
     color:#31516e;
-
     background:white;
 }
 
 .secondary:hover{
-
     background:#edf6ff;
 }
 
@@ -273,26 +230,20 @@ nav a:hover{
 /* ================= HERO LOGO ================= */
 
 .atom-container{
-
     width:390px;
-
     height:390px;
 
     position:relative;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     flex-shrink:0;
 }
 
 .hero-logo{
-
     width:350px;
-
     height:350px;
 
     object-fit:contain;
@@ -309,37 +260,26 @@ nav a:hover{
         0 15px 35px rgba(22,136,201,.18)
     );
 
-    transition:
-        transform .4s ease,
-        filter .4s ease;
+    transition:.4s ease;
 }
 
 .hero-logo:hover{
-
     transform:scale(1.04);
-
-    filter:drop-shadow(
-        0 20px 45px rgba(22,136,201,.25)
-    );
 }
 
 
-/* ================= GENERAL SECTIONS ================= */
+/* ================= SECTIONS ================= */
 
 section{
-
     padding:90px 8%;
 }
 
 .section-heading{
-
     text-align:center;
-
     margin-bottom:50px;
 }
 
 .section-heading span{
-
     color:#1688c9;
 
     font-size:13px;
@@ -348,7 +288,6 @@ section{
 }
 
 .section-heading h2{
-
     font-size:34px;
 
     color:#07152e;
@@ -357,7 +296,6 @@ section{
 }
 
 .section-heading p{
-
     color:#718096;
 
     margin-top:7px;
@@ -367,7 +305,6 @@ section{
 /* ================= ACTIVITIES ================= */
 
 .cards{
-
     display:grid;
 
     grid-template-columns:
@@ -377,7 +314,6 @@ section{
 }
 
 .card{
-
     background:white;
 
     padding:30px;
@@ -393,7 +329,6 @@ section{
 }
 
 .card:hover{
-
     transform:translateY(-8px);
 
     box-shadow:
@@ -401,9 +336,7 @@ section{
 }
 
 .card-icon{
-
     width:55px;
-
     height:55px;
 
     border-radius:13px;
@@ -411,7 +344,6 @@ section{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     background:#e8f6ff;
@@ -422,14 +354,12 @@ section{
 }
 
 .card h3{
-
     color:#123b68;
 
     margin-bottom:10px;
 }
 
 .card p{
-
     color:#68778a;
 
     font-size:14px;
@@ -439,17 +369,14 @@ section{
 /* ================= MEMBERS ================= */
 
 .members{
-
     background:#f5f8fc;
 }
 
 .members-group{
-
     margin-bottom:60px;
 }
 
 .members-title{
-
     text-align:center;
 
     color:#123b68;
@@ -460,13 +387,11 @@ section{
 }
 
 .members-title::after{
-
     content:"";
 
     display:block;
 
     width:50px;
-
     height:3px;
 
     background:#1688c9;
@@ -477,7 +402,6 @@ section{
 }
 
 .members-grid{
-
     display:grid;
 
     grid-template-columns:
@@ -491,7 +415,6 @@ section{
 }
 
 .member-card{
-
     background:white;
 
     border:1px solid #e4ebf3;
@@ -509,7 +432,6 @@ section{
 }
 
 .member-card:hover{
-
     transform:translateY(-7px);
 
     box-shadow:
@@ -519,9 +441,7 @@ section{
 }
 
 .member-icon{
-
     width:70px;
-
     height:70px;
 
     margin:0 auto 18px;
@@ -531,7 +451,6 @@ section{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     background:#e8f6ff;
@@ -544,7 +463,6 @@ section{
 }
 
 .member-card h3{
-
     color:#123b68;
 
     font-size:17px;
@@ -553,14 +471,12 @@ section{
 }
 
 .member-card span{
-
     color:#718096;
 
     font-size:13px;
 }
 
 .member-card.secretary{
-
     border:2px solid #1688c9;
 
     max-width:300px;
@@ -569,7 +485,6 @@ section{
 }
 
 .member-card.secretary .member-icon{
-
     background:#1688c9;
 
     color:white;
@@ -581,12 +496,10 @@ section{
 /* ================= COLLABORATORS ================= */
 
 .collaborators{
-
     background:white;
 }
 
 .collaborators-box{
-
     max-width:950px;
 
     margin:auto;
@@ -611,7 +524,6 @@ section{
 }
 
 .collaborators-box p{
-
     max-width:700px;
 
     margin:0 auto 30px;
@@ -622,7 +534,6 @@ section{
 }
 
 .collaborator-placeholder{
-
     display:inline-flex;
 
     align-items:center;
@@ -643,7 +554,6 @@ section{
 }
 
 .collaborator-placeholder span{
-
     font-size:20px;
 }
 
@@ -651,24 +561,20 @@ section{
 /* ================= ABOUT ================= */
 
 .about{
-
     background:#07152e;
 
     color:white;
 }
 
 .about .section-heading h2{
-
     color:white;
 }
 
 .about .section-heading p{
-
     color:#aebed0;
 }
 
 .about-content{
-
     max-width:900px;
 
     margin:auto;
@@ -686,7 +592,6 @@ section{
 /* ================= STATS ================= */
 
 .stats{
-
     display:grid;
 
     grid-template-columns:
@@ -698,7 +603,6 @@ section{
 }
 
 .stat{
-
     text-align:center;
 
     padding:25px;
@@ -710,7 +614,6 @@ section{
 }
 
 .stat strong{
-
     display:block;
 
     font-size:32px;
@@ -719,7 +622,6 @@ section{
 }
 
 .stat span{
-
     color:#aebed0;
 
     font-size:13px;
@@ -729,7 +631,6 @@ section{
 /* ================= FOOTER ================= */
 
 footer{
-
     background:#030a15;
 
     color:#9daec3;
@@ -747,14 +648,11 @@ footer{
 @media(max-width:900px){
 
     header{
-
         flex-direction:column;
-
         gap:15px;
     }
 
     nav{
-
         gap:15px;
 
         flex-wrap:wrap;
@@ -763,7 +661,6 @@ footer{
     }
 
     .hero{
-
         flex-direction:column;
 
         text-align:center;
@@ -772,42 +669,33 @@ footer{
     }
 
     .hero h2{
-
         font-size:38px;
     }
 
     .hero-buttons{
-
         justify-content:center;
     }
 
     .atom-container{
-
         width:300px;
-
         height:300px;
     }
 
     .hero-logo{
-
         width:280px;
-
         height:280px;
     }
 
     .cards{
-
         grid-template-columns:1fr;
     }
 
     .members-grid{
-
         grid-template-columns:
             repeat(2,1fr);
     }
 
     .stats{
-
         grid-template-columns:
             repeat(2,1fr);
     }
@@ -817,46 +705,36 @@ footer{
 @media(max-width:500px){
 
     .brand-logo{
-
         width:52px;
-
         height:52px;
     }
 
     .brand h1{
-
         font-size:16px;
     }
 
     .hero h2{
-
         font-size:30px;
     }
 
     .hero p{
-
         font-size:15px;
     }
 
     .members-grid{
-
         grid-template-columns:1fr;
     }
 
     .stats{
-
         grid-template-columns:1fr;
     }
 
     section{
-
         padding:60px 6%;
     }
 
     .hero-logo{
-
         width:250px;
-
         height:250px;
     }
 }
@@ -873,63 +751,63 @@ footer{
 
 <header>
 
-    <div class="brand">
+<div class="brand">
 
-        <div class="brand-logo">
+    <div class="brand-logo">
 
-            <img
-                src="{{ url_for('static', filename='images/LOGO1.png') }}"
-                alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
-            >
-
-        </div>
-
-        <div>
-
-            <h1>
-                انجمن علمی فیزیک
-            </h1>
-
-            <span>
-                دانشگاه شهرکرد
-            </span>
-
-        </div>
+        <img
+            src="{{ url_for('static', filename='images/logo.jpg') }}"
+            alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
+        >
 
     </div>
 
+    <div>
 
-    <nav>
+        <h1>
+            انجمن علمی فیزیک
+        </h1>
 
-        <a href="#">
-            خانه
-        </a>
+        <span>
+            دانشگاه شهرکرد
+        </span>
 
-        <a href="#about">
-            درباره انجمن
-        </a>
+    </div>
 
-        <a href="#activities">
-            فعالیت‌ها
-        </a>
+</div>
 
-        <a href="#members">
-            اعضا
-        </a>
 
-        <a href="#collaborators">
-            اعضای همکار
-        </a>
+<nav>
 
-        <a href="#">
-            رویدادها
-        </a>
+    <a href="#">
+        خانه
+    </a>
 
-        <a href="#">
-            ارتباط با ما
-        </a>
+    <a href="#about">
+        درباره انجمن
+    </a>
 
-    </nav>
+    <a href="#activities">
+        فعالیت‌ها
+    </a>
+
+    <a href="#members">
+        اعضا
+    </a>
+
+    <a href="#collaborators">
+        اعضای همکار
+    </a>
+
+    <a href="#">
+        رویدادها
+    </a>
+
+    <a href="#">
+        ارتباط با ما
+    </a>
+
+</nav>
 
 </header>
 
@@ -938,69 +816,66 @@ footer{
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="small-title">
-
-            انجمن علمی فیزیک دانشگاه شهرکرد
-
-        </div>
-
-
-        <h2>
-
-            دنیای فیزیک را
-
-            <span>
-                با هم کشف کنیم
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            انجمن علمی فیزیک دانشگاه شهرکرد بستری برای
-            فعالیت‌های علمی، پژوهشی، آموزشی و دانشجویی است؛
-            جایی برای یادگیری، تجربه، ایده‌پردازی و ساختن
-            آینده‌ای علمی.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a
-                href="#activities"
-                class="btn primary"
-            >
-                فعالیت‌های انجمن
-            </a>
-
-
-            <a
-                href="#about"
-                class="btn secondary"
-            >
-                درباره انجمن
-            </a>
-
-        </div>
-
+    <div class="small-title">
+        انجمن علمی فیزیک دانشگاه شهرکرد
     </div>
 
 
-    <!-- LOGO -->
+    <h2>
 
-    <div class="atom-container">
+        دنیای فیزیک را
 
-        <img
-            src="{{ url_for('static', filename='images/LOGO1.png') }}"
-            alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
-            class="hero-logo"
+        <span>
+            با هم کشف کنیم
+        </span>
+
+    </h2>
+
+
+    <p>
+
+        انجمن علمی فیزیک دانشگاه شهرکرد بستری برای
+        فعالیت‌های علمی، پژوهشی، آموزشی و دانشجویی است؛
+        جایی برای یادگیری، تجربه، ایده‌پردازی و ساختن
+        آینده‌ای علمی.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a
+            href="#activities"
+            class="btn primary"
         >
+            فعالیت‌های انجمن
+        </a>
+
+        <a
+            href="#about"
+            class="btn secondary"
+        >
+            درباره انجمن
+        </a>
 
     </div>
+
+</div>
+
+
+<!-- لوگوی JPG -->
+
+<div class="atom-container">
+
+    <img
+        src="{{ url_for('static', filename='images/logo.jpg') }}"
+        alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
+        class="hero-logo"
+    >
+
+</div>
 
 </section>
 
@@ -1009,134 +884,135 @@ footer{
 
 <section id="activities">
 
-    <div class="section-heading">
+<div class="section-heading">
 
-        <span>
-            WHAT WE DO
-        </span>
+    <span>
+        WHAT WE DO
+    </span>
 
-        <h2>
-            فعالیت‌های انجمن
-        </h2>
+    <h2>
+        فعالیت‌های انجمن
+    </h2>
 
-        <p>
-            بخشی از زمینه‌های فعالیت انجمن علمی فیزیک
-        </p>
+    <p>
+        بخشی از زمینه‌های فعالیت انجمن علمی فیزیک
+    </p>
 
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+    <div class="card-icon">
+        🔬
     </div>
 
+    <h3>
+        فعالیت‌های پژوهشی
+    </h3>
 
-    <div class="cards">
+    <p>
+        ایجاد فرصت برای مشارکت دانشجویان
+        در فعالیت‌های پژوهشی و علمی حوزه فیزیک.
+    </p>
 
-
-        <div class="card">
-
-            <div class="card-icon">
-                🔬
-            </div>
-
-            <h3>
-                فعالیت‌های پژوهشی
-            </h3>
-
-            <p>
-                ایجاد فرصت برای مشارکت دانشجویان
-                در فعالیت‌های پژوهشی و علمی حوزه فیزیک.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icon">
-                🎓
-            </div>
-
-            <h3>
-                آموزش و کارگاه‌ها
-            </h3>
-
-            <p>
-                برگزاری کارگاه‌ها، دوره‌های آموزشی،
-                نشست‌های تخصصی و برنامه‌های علمی.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                📰
-            </div>
-
-            <h3>
-                نشریات علمی
-            </h3>
-
-            <p>
-                تولید و انتشار محتوای علمی،
-                مقالات، بولتن‌ها و نشریات دانشجویی.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                🧠
-            </div>
-
-            <h3>
-                مسابقات علمی
-            </h3>
-
-            <p>
-                برگزاری مسابقات و چالش‌های علمی
-                برای افزایش انگیزه و خلاقیت دانشجویان.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                💡
-            </div>
-
-            <h3>
-                ایده و نوآوری
-            </h3>
-
-            <p>
-                فراهم کردن بستری برای ارائه ایده‌ها
-                و پروژه‌های علمی دانشجویان.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                🌌
-            </div>
-
-            <h3>
-                ترویج علم
-            </h3>
-
-            <p>
-                معرفی جذاب و کاربردی علم فیزیک
-                به دانشجویان و علاقه‌مندان.
-            </p>
-
-        </div>
-
+    <div class="card-icon">
+        🎓
     </div>
+
+    <h3>
+        آموزش و کارگاه‌ها
+    </h3>
+
+    <p>
+        برگزاری کارگاه‌ها، دوره‌های آموزشی،
+        نشست‌های تخصصی و برنامه‌های علمی.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="card-icon">
+        📰
+    </div>
+
+    <h3>
+        نشریات علمی
+    </h3>
+
+    <p>
+        تولید و انتشار محتوای علمی،
+        مقالات، بولتن‌ها و نشریات دانشجویی.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="card-icon">
+        🧠
+    </div>
+
+    <h3>
+        مسابقات علمی
+    </h3>
+
+    <p>
+        برگزاری مسابقات و چالش‌های علمی
+        برای افزایش انگیزه و خلاقیت دانشجویان.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="card-icon">
+        💡
+    </div>
+
+    <h3>
+        ایده و نوآوری
+    </h3>
+
+    <p>
+        فراهم کردن بستری برای ارائه ایده‌ها
+        و پروژه‌های علمی دانشجویان.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="card-icon">
+        🌌
+    </div>
+
+    <h3>
+        ترویج علم
+    </h3>
+
+    <p>
+        معرفی جذاب و کاربردی علم فیزیک
+        به دانشجویان و علاقه‌مندان.
+    </p>
+
+</div>
+
+
+</div>
 
 </section>
 
@@ -1145,184 +1021,178 @@ footer{
 
 <section class="members" id="members">
 
-    <div class="section-heading">
+<div class="section-heading">
 
-        <span>
-            OUR TEAM
-        </span>
+    <span>
+        OUR TEAM
+    </span>
 
-        <h2>
-            اعضای انجمن
-        </h2>
+    <h2>
+        اعضای انجمن
+    </h2>
 
-        <p>
-            اعضای هیئت اجرایی انجمن علمی فیزیک دانشگاه شهرکرد
-        </p>
+    <p>
+        اعضای هیئت اجرایی انجمن علمی فیزیک دانشگاه شهرکرد
+    </p>
 
-    </div>
+</div>
 
 
-    <!-- دبیر -->
+<div class="members-group">
 
-    <div class="members-group">
+    <h3 class="members-title">
+        دبیر انجمن
+    </h3>
 
-        <h3 class="members-title">
-            دبیر انجمن
-        </h3>
+    <div class="members-grid">
 
-        <div class="members-grid">
+        <div class="member-card secretary">
 
-            <div class="member-card secretary">
-
-                <div class="member-icon">
-                    ⚛
-                </div>
-
-                <h3>
-                    مائده ابراهیمی
-                </h3>
-
-                <span>
-                    دبیر انجمن علمی فیزیک
-                </span>
-
+            <div class="member-icon">
+                ⚛
             </div>
+
+            <h3>
+                مائده ابراهیمی
+            </h3>
+
+            <span>
+                دبیر انجمن علمی فیزیک
+            </span>
 
         </div>
 
     </div>
 
-
-    <!-- اعضای اصلی -->
-
-    <div class="members-group">
-
-        <h3 class="members-title">
-            اعضای اصلی
-        </h3>
-
-        <div class="members-grid">
+</div>
 
 
-            <div class="member-card">
+<div class="members-group">
 
-                <div class="member-icon">
-                    👤
-                </div>
+    <h3 class="members-title">
+        اعضای اصلی
+    </h3>
 
-                <h3>
-                    فاطمه کاظمی
-                </h3>
+    <div class="members-grid">
 
-                <span>
-                    عضو اصلی
-                </span>
 
+        <div class="member-card">
+
+            <div class="member-icon">
+                👤
             </div>
 
+            <h3>
+                فاطمه کاظمی
+            </h3>
 
-            <div class="member-card">
+            <span>
+                عضو اصلی
+            </span>
 
-                <div class="member-icon">
-                    👤
-                </div>
+        </div>
 
-                <h3>
-                    ابوالفضل اکبری
-                </h3>
 
-                <span>
-                    عضو اصلی
-                </span>
+        <div class="member-card">
 
+            <div class="member-icon">
+                👤
             </div>
 
+            <h3>
+                ابوالفضل اکبری
+            </h3>
 
-            <div class="member-card">
+            <span>
+                عضو اصلی
+            </span>
 
-                <div class="member-icon">
-                    👤
-                </div>
+        </div>
 
-                <h3>
-                    محمدطاها خلیلی
-                </h3>
 
-                <span>
-                    عضو اصلی
-                </span>
+        <div class="member-card">
 
+            <div class="member-icon">
+                👤
             </div>
 
+            <h3>
+                محمدطاها خلیلی
+            </h3>
 
-            <div class="member-card">
+            <span>
+                عضو اصلی
+            </span>
 
-                <div class="member-icon">
-                    👤
-                </div>
+        </div>
 
-                <h3>
-                    مهشید دلفی
-                </h3>
 
-                <span>
-                    عضو اصلی
-                </span>
+        <div class="member-card">
 
+            <div class="member-icon">
+                👤
             </div>
+
+            <h3>
+                مهشید دلفی
+            </h3>
+
+            <span>
+                عضو اصلی
+            </span>
 
         </div>
 
     </div>
 
-
-    <!-- اعضای علی البدل -->
-
-    <div class="members-group">
-
-        <h3 class="members-title">
-            اعضای علی‌البدل
-        </h3>
-
-        <div class="members-grid">
+</div>
 
 
-            <div class="member-card">
+<div class="members-group">
 
-                <div class="member-icon">
-                    👤
-                </div>
+    <h3 class="members-title">
+        اعضای علی‌البدل
+    </h3>
 
-                <h3>
-                    آیدا قربانی
-                </h3>
+    <div class="members-grid">
 
-                <span>
-                    عضو علی‌البدل
-                </span>
 
+        <div class="member-card">
+
+            <div class="member-icon">
+                👤
             </div>
 
+            <h3>
+                آیدا قربانی
+            </h3>
 
-            <div class="member-card">
+            <span>
+                عضو علی‌البدل
+            </span>
 
-                <div class="member-icon">
-                    👤
-                </div>
+        </div>
 
-                <h3>
-                    نیلوفر صمدانی
-                </h3>
 
-                <span>
-                    عضو علی‌البدل
-                </span>
+        <div class="member-card">
 
+            <div class="member-icon">
+                👤
             </div>
+
+            <h3>
+                نیلوفر صمدانی
+            </h3>
+
+            <span>
+                عضو علی‌البدل
+            </span>
 
         </div>
 
     </div>
+
+</div>
 
 </section>
 
@@ -1334,45 +1204,45 @@ footer{
     id="collaborators"
 >
 
-    <div class="section-heading">
+<div class="section-heading">
+
+    <span>
+        COLLABORATORS
+    </span>
+
+    <h2>
+        اعضای همکار انجمن
+    </h2>
+
+    <p>
+        دانشجویان فعال و همراه انجمن علمی فیزیک
+    </p>
+
+</div>
+
+
+<div class="collaborators-box">
+
+    <p>
+
+        اعضای همکار انجمن، دانشجویان علاقه‌مند و فعالی هستند
+        که در برگزاری برنامه‌های علمی، آموزشی، پژوهشی،
+        فرهنگی و اجرایی انجمن مشارکت می‌کنند.
+
+    </p>
+
+
+    <div class="collaborator-placeholder">
 
         <span>
-            COLLABORATORS
+            🤝
         </span>
 
-        <h2>
-            اعضای همکار انجمن
-        </h2>
-
-        <p>
-            دانشجویان فعال و همراه انجمن علمی فیزیک
-        </p>
+        دانشجویان همکار انجمن
 
     </div>
 
-
-    <div class="collaborators-box">
-
-        <p>
-
-            اعضای همکار انجمن، دانشجویان علاقه‌مند و فعالی هستند
-            که در برگزاری برنامه‌های علمی، آموزشی، پژوهشی،
-            فرهنگی و اجرایی انجمن مشارکت می‌کنند.
-
-        </p>
-
-
-        <div class="collaborator-placeholder">
-
-            <span>
-                🤝
-            </span>
-
-            دانشجویان همکار انجمن
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -1384,93 +1254,94 @@ footer{
     id="about"
 >
 
-    <div class="section-heading">
+<div class="section-heading">
 
-        <span>
-            ABOUT US
-        </span>
+    <span>
+        ABOUT US
+    </span>
 
-        <h2>
-            درباره انجمن علمی فیزیک
-        </h2>
+    <h2>
+        درباره انجمن علمی فیزیک
+    </h2>
 
-        <p>
-            دانشگاه شهرکرد
-        </p>
+    <p>
+        دانشگاه شهرکرد
+    </p>
 
-    </div>
-
-
-    <div class="about-content">
-
-        انجمن علمی فیزیک دانشگاه شهرکرد با هدف
-        ایجاد بستری پویا برای فعالیت‌های علمی،
-        آموزشی، پژوهشی و فرهنگی دانشجویان شکل گرفته است.
-
-        این انجمن تلاش می‌کند با برگزاری برنامه‌های
-        علمی، کارگاه‌ها، نشست‌ها، مسابقات،
-        فعالیت‌های پژوهشی و تولید محتوای علمی،
-        زمینه رشد و شکوفایی استعدادهای دانشجویان
-        را فراهم کند.
-
-    </div>
+</div>
 
 
-    <div class="stats">
+<div class="about-content">
+
+    انجمن علمی فیزیک دانشگاه شهرکرد با هدف
+    ایجاد بستری پویا برای فعالیت‌های علمی،
+    آموزشی، پژوهشی و فرهنگی دانشجویان شکل گرفته است.
+
+    این انجمن تلاش می‌کند با برگزاری برنامه‌های
+    علمی، کارگاه‌ها، نشست‌ها، مسابقات،
+    فعالیت‌های پژوهشی و تولید محتوای علمی،
+    زمینه رشد و شکوفایی استعدادهای دانشجویان
+    را فراهم کند.
+
+</div>
 
 
-        <div class="stat">
-
-            <strong>
-                +
-            </strong>
-
-            <span>
-                برنامه‌های علمی
-            </span>
-
-        </div>
+<div class="stats">
 
 
-        <div class="stat">
+<div class="stat">
 
-            <strong>
-                ۷
-            </strong>
+    <strong>
+        +
+    </strong>
 
-            <span>
-                اعضای انجمن
-            </span>
+    <span>
+        برنامه‌های علمی
+    </span>
 
-        </div>
-
-
-        <div class="stat">
-
-            <strong>
-                +
-            </strong>
-
-            <span>
-                کارگاه و نشست
-            </span>
-
-        </div>
+</div>
 
 
-        <div class="stat">
+<div class="stat">
 
-            <strong>
-                ∞
-            </strong>
+    <strong>
+        ۷
+    </strong>
 
-            <span>
-                ایده‌های جدید
-            </span>
+    <span>
+        اعضای انجمن
+    </span>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="stat">
+
+    <strong>
+        +
+    </strong>
+
+    <span>
+        کارگاه و نشست
+    </span>
+
+</div>
+
+
+<div class="stat">
+
+    <strong>
+        ∞
+    </strong>
+
+    <span>
+        ایده‌های جدید
+    </span>
+
+</div>
+
+
+</div>
 
 </section>
 
@@ -1479,13 +1350,13 @@ footer{
 
 <footer>
 
-    <p>
-        © ۱۴۰۵ انجمن علمی فیزیک دانشگاه شهرکرد
-    </p>
+<p>
+    © ۱۴۰۵ انجمن علمی فیزیک دانشگاه شهرکرد
+</p>
 
-    <p>
-        تمامی حقوق این وب‌سایت محفوظ است.
-    </p>
+<p>
+    تمامی حقوق این وب‌سایت محفوظ است.
+</p>
 
 </footer>
 
