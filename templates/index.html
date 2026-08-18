@@ -69,7 +69,8 @@
 
             background: transparent;
 
-            box-shadow: 0 0 20px rgba(86,197,255,0.25);
+            box-shadow:
+                0 0 20px rgba(86,197,255,0.25);
         }
 
         .brand-logo img {
@@ -79,6 +80,10 @@
             object-fit: contain;
 
             display: block;
+
+            background: transparent;
+
+            mix-blend-mode: screen;
         }
 
         .brand h1 {
@@ -106,6 +111,7 @@
         nav a:hover {
             color: #56c5ff;
         }
+
 
         /* ================= HERO ================= */
 
@@ -226,9 +232,10 @@
             background: #edf6ff;
         }
 
+
         /* ================= HERO LOGO ================= */
 
-        .hero-logo-container {
+        .atom-container {
             width: 390px;
             height: 390px;
 
@@ -238,12 +245,47 @@
             align-items: center;
             justify-content: center;
 
-            z-index: 1;
+            background: transparent;
         }
 
-        .hero-logo {
-            width: 330px;
-            height: 330px;
+        .hero-logo-box {
+            width: 370px;
+            height: 370px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: transparent;
+
+            position: relative;
+        }
+
+        .hero-logo-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(86,197,255,0.14),
+                    transparent 70%
+                );
+
+            filter: blur(10px);
+
+            z-index: 0;
+        }
+
+        .hero-logo-box img {
+            width: 350px;
+            height: 350px;
 
             object-fit: contain;
 
@@ -251,28 +293,22 @@
 
             background: transparent;
 
-            filter: drop-shadow(
-                0 15px 30px rgba(22,136,201,0.18)
-            );
+            position: relative;
 
-            animation: floatingLogo 5s ease-in-out infinite;
+            z-index: 1;
+
+            /*
+             * ترکیب لوگو با پس‌زمینه
+             */
+            mix-blend-mode: multiply;
+
+            filter:
+                drop-shadow(
+                    0 15px 30px
+                    rgba(22,136,201,0.18)
+                );
         }
 
-        @keyframes floatingLogo {
-
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-
-        }
 
         /* ================= GENERAL SECTIONS ================= */
 
@@ -304,6 +340,7 @@
             color: #718096;
             margin-top: 7px;
         }
+
 
         /* ================= ACTIVITIES ================= */
 
@@ -364,6 +401,7 @@
             color: #68778a;
             font-size: 14px;
         }
+
 
         /* ================= MEMBERS ================= */
 
@@ -491,6 +529,7 @@
             border-color: #56c5ff;
         }
 
+
         /* ================= COLLABORATORS ================= */
 
         .collaborators {
@@ -555,6 +594,7 @@
             font-size: 20px;
         }
 
+
         /* ================= ABOUT ================= */
 
         .about {
@@ -583,6 +623,7 @@
 
             line-height: 2.3;
         }
+
 
         /* ================= STATS ================= */
 
@@ -622,6 +663,7 @@
             font-size: 13px;
         }
 
+
         /* ================= FOOTER ================= */
 
         footer {
@@ -635,6 +677,7 @@
 
             font-size: 13px;
         }
+
 
         /* ================= MOBILE ================= */
 
@@ -657,6 +700,8 @@
                 flex-direction: column;
 
                 text-align: center;
+
+                padding-top: 60px;
             }
 
             .hero h2 {
@@ -667,16 +712,21 @@
                 justify-content: center;
             }
 
-            .hero-logo-container {
+            .atom-container {
                 width: 300px;
                 height: 300px;
 
-                margin-top: 40px;
+                margin-top: 30px;
             }
 
-            .hero-logo {
-                width: 260px;
-                height: 260px;
+            .hero-logo-box {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-logo-box img {
+                width: 280px;
+                height: 280px;
             }
 
             .cards {
@@ -693,6 +743,7 @@
                     repeat(2, 1fr);
             }
         }
+
 
         @media (max-width: 500px) {
 
@@ -713,14 +764,19 @@
                 font-size: 15px;
             }
 
-            .hero-logo-container {
-                width: 260px;
-                height: 260px;
+            .atom-container {
+                width: 270px;
+                height: 270px;
             }
 
-            .hero-logo {
-                width: 220px;
-                height: 220px;
+            .hero-logo-box {
+                width: 270px;
+                height: 270px;
+            }
+
+            .hero-logo-box img {
+                width: 250px;
+                height: 250px;
             }
 
             .members-grid {
@@ -809,6 +865,7 @@
 </header>
 
 
+
 <!-- ================= HERO ================= -->
 
 <section class="hero">
@@ -827,9 +884,9 @@
         </h2>
 
         <p>
-            انجمن علمی فیزیک دانشگاه شهرکرد بستری برای فعالیت‌های علمی،
-            پژوهشی، آموزشی و دانشجویی است؛ جایی برای یادگیری، تجربه،
-            ایده‌پردازی و ساختن آینده‌ای علمی.
+            انجمن علمی فیزیک دانشگاه شهرکرد بستری برای
+            فعالیت‌های علمی، پژوهشی، آموزشی و دانشجویی است؛
+            جایی برای یادگیری، تجربه، ایده‌پردازی و ساختن آینده‌ای علمی.
         </p>
 
         <div class="hero-buttons">
@@ -853,19 +910,23 @@
     </div>
 
 
-    <!-- لوگوی انجمن به جای اتم -->
+    <!-- ================= LOGO ================= -->
 
-    <div class="hero-logo-container">
+    <div class="atom-container">
 
-        <img
-            src="{{ url_for('static', filename='images/logo.png') }}"
-            alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
-            class="hero-logo"
-        >
+        <div class="hero-logo-box">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
+            >
+
+        </div>
 
     </div>
 
 </section>
+
 
 
 <!-- ================= ACTIVITIES ================= -->
@@ -902,8 +963,8 @@
             </h3>
 
             <p>
-                ایجاد فرصت برای مشارکت دانشجویان در فعالیت‌های پژوهشی
-                و علمی حوزه فیزیک.
+                ایجاد فرصت برای مشارکت دانشجویان
+                در فعالیت‌های پژوهشی و علمی حوزه فیزیک.
             </p>
 
         </div>
@@ -920,8 +981,8 @@
             </h3>
 
             <p>
-                برگزاری کارگاه‌ها، دوره‌های آموزشی، نشست‌های تخصصی
-                و برنامه‌های علمی.
+                برگزاری کارگاه‌ها، دوره‌های آموزشی،
+                نشست‌های تخصصی و برنامه‌های علمی.
             </p>
 
         </div>
@@ -938,8 +999,8 @@
             </h3>
 
             <p>
-                تولید و انتشار محتوای علمی، مقالات، بولتن‌ها
-                و نشریات دانشجویی.
+                تولید و انتشار محتوای علمی،
+                مقالات، بولتن‌ها و نشریات دانشجویی.
             </p>
 
         </div>
@@ -956,8 +1017,8 @@
             </h3>
 
             <p>
-                برگزاری مسابقات و چالش‌های علمی برای افزایش انگیزه
-                و خلاقیت دانشجویان.
+                برگزاری مسابقات و چالش‌های علمی
+                برای افزایش انگیزه و خلاقیت دانشجویان.
             </p>
 
         </div>
@@ -974,8 +1035,8 @@
             </h3>
 
             <p>
-                فراهم کردن بستری برای ارائه ایده‌ها و پروژه‌های
-                علمی دانشجویان.
+                فراهم کردن بستری برای ارائه ایده‌ها
+                و پروژه‌های علمی دانشجویان.
             </p>
 
         </div>
@@ -992,8 +1053,8 @@
             </h3>
 
             <p>
-                معرفی جذاب و کاربردی علم فیزیک به دانشجویان
-                و علاقه‌مندان.
+                معرفی جذاب و کاربردی علم فیزیک
+                به دانشجویان و علاقه‌مندان.
             </p>
 
         </div>
@@ -1001,6 +1062,7 @@
     </div>
 
 </section>
+
 
 
 <!-- ================= MEMBERS ================= -->
@@ -1023,8 +1085,6 @@
 
     </div>
 
-
-    <!-- دبیر -->
 
     <div class="members-group">
 
@@ -1055,8 +1115,6 @@
     </div>
 
 
-    <!-- اعضای اصلی -->
-
     <div class="members-group">
 
         <h3 class="members-title">
@@ -1076,7 +1134,7 @@
                 </h3>
 
                 <span>
-                    نائب دبیر
+                    عضو اصلی
                 </span>
 
             </div>
@@ -1093,7 +1151,7 @@
                 </h3>
 
                 <span>
-                    مسئول پژوهشی
+                    عضو اصلی
                 </span>
 
             </div>
@@ -1110,7 +1168,7 @@
                 </h3>
 
                 <span>
-                    مسئول آموزشی
+                    عضو اصلی
                 </span>
 
             </div>
@@ -1127,7 +1185,7 @@
                 </h3>
 
                 <span>
-                    مسئول نشریات
+                    عضو اصلی
                 </span>
 
             </div>
@@ -1136,8 +1194,6 @@
 
     </div>
 
-
-    <!-- اعضای علی‌البدل -->
 
     <div class="members-group">
 
@@ -1185,6 +1241,7 @@
     </div>
 
 </section>
+
 
 
 <!-- ================= COLLABORATORS ================= -->
@@ -1235,6 +1292,7 @@
 </section>
 
 
+
 <!-- ================= ABOUT ================= -->
 
 <section
@@ -1261,15 +1319,14 @@
 
     <div class="about-content">
 
-        انجمن علمی فیزیک دانشگاه شهرکرد با هدف ایجاد بستری پویا
-        برای فعالیت‌های علمی، آموزشی، پژوهشی و فرهنگی دانشجویان
-        شکل گرفته است.
+        انجمن علمی فیزیک دانشگاه شهرکرد با هدف
+        ایجاد بستری پویا برای فعالیت‌های علمی،
+        آموزشی، پژوهشی و فرهنگی دانشجویان شکل گرفته است.
 
-        <br><br>
-
-        این انجمن تلاش می‌کند با برگزاری برنامه‌های علمی،
-        کارگاه‌ها، نشست‌ها، مسابقات، فعالیت‌های پژوهشی و تولید
-        محتوای علمی، زمینه رشد و شکوفایی استعدادهای دانشجویان
+        این انجمن تلاش می‌کند با برگزاری برنامه‌های
+        علمی، کارگاه‌ها، نشست‌ها، مسابقات،
+        فعالیت‌های پژوهشی و تولید محتوای علمی،
+        زمینه رشد و شکوفایی استعدادهای دانشجویان
         را فراهم کند.
 
     </div>
@@ -1331,6 +1388,7 @@
     </div>
 
 </section>
+
 
 
 <!-- ================= FOOTER ================= -->
