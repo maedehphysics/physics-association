@@ -3,1073 +3,1351 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>انجمن علمی فیزیک دانشگاه شهرکرد</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Tahoma, Arial, sans-serif;
-            background: #f5f8fc;
-            color: #172033;
-            line-height: 1.9;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(7, 21, 46, 0.98);
-            padding: 12px 7%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.18);
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .brand-logo {
-            width: 64px;
-            height: 64px;
-            background: white;
-            border-radius: 50%;
-            overflow: hidden;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            flex-shrink: 0;
-        }
-
-        .brand-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-        .brand h1 {
-            color: white;
-            font-size: 19px;
-        }
-
-        .brand span {
-            color: #a9bdd5;
-            font-size: 12px;
-        }
-
-        nav {
-            display: flex;
-            gap: 22px;
-        }
-
-        nav a {
-            color: #dce8f5;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #56c5ff;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 650px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-
-            padding: 80px 8%;
-
-            background:
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(40, 160, 220, 0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(60, 100, 200, 0.12),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #edf6ff,
-                    #ffffff
-                );
-
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 680px;
-        }
-
-        .small-title {
-            display: inline-block;
-
-            padding: 7px 16px;
-            border-radius: 30px;
-
-            background: #e1f4ff;
-            color: #0875b4;
-
-            font-size: 13px;
-            font-weight: bold;
-
-            margin-bottom: 20px;
-        }
-
-        .hero h2 {
-            font-size: 52px;
-            line-height: 1.5;
-
-            color: #07152e;
-            margin-bottom: 20px;
-        }
-
-        .hero h2 span {
-            color: #1688c9;
-        }
-
-        .hero p {
-            color: #5b6b7d;
-            font-size: 17px;
-            max-width: 650px;
-        }
-
-        .hero-buttons {
-            margin-top: 32px;
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 9px;
-
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-
-            transition: 0.3s;
-        }
-
-        .primary {
-            background: #1688c9;
-            color: white;
-
-            box-shadow: 0 8px 20px rgba(22, 136, 201, 0.25);
-        }
-
-        .primary:hover {
-            transform: translateY(-3px);
-            background: #0d6fa8;
-        }
-
-        .secondary {
-            border: 1px solid #b8cde0;
-            color: #31516e;
-            background: white;
-        }
-
-        .secondary:hover {
-            background: #edf6ff;
-        }
-
-        /* ================= HERO LOGO ================= */
-
-        .hero-logo-container {
-            width: 390px;
-            height: 390px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            flex-shrink: 0;
-        }
-
-        .hero-logo {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-
-            filter: drop-shadow(0 15px 35px rgba(22, 136, 201, 0.22));
-        }
-
-        /* ================= GENERAL ================= */
-
-        section {
-            padding: 90px 8%;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-heading span {
-            color: #1688c9;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .section-heading h2 {
-            font-size: 34px;
-            color: #07152e;
-            margin-top: 7px;
-        }
-
-        .section-heading p {
-            color: #718096;
-            margin-top: 7px;
-        }
-
-        /* ================= ACTIVITIES ================= */
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>انجمن علمی فیزیک دانشگاه شهرکرد</title>
 
-        .card {
-            background: white;
-            padding: 30px;
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f5f8fc;
+    color:#172033;
+    line-height:1.9;
+}
 
-            border-radius: 16px;
-            border: 1px solid #e7edf4;
+/* HEADER */
 
-            box-shadow: 0 8px 25px rgba(15, 40, 70, 0.06);
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-            transition: 0.3s;
-        }
+    background:#07152e;
 
-        .card:hover {
-            transform: translateY(-8px);
+    padding:14px 7%;
 
-            box-shadow:
-                0 18px 35px rgba(15, 40, 70, 0.11);
-        }
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        .card-icon {
-            width: 55px;
-            height: 55px;
+    box-shadow:0 4px 25px rgba(0,0,0,.15);
+}
 
-            border-radius: 13px;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.brand-logo{
+    width:60px;
+    height:60px;
 
-            background: #e8f6ff;
+    background:white;
+    border-radius:50%;
 
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
+    overflow:hidden;
 
-        .card h3 {
-            color: #123b68;
-            margin-bottom: 10px;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-        .card p {
-            color: #68778a;
-            font-size: 14px;
-        }
+.brand-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
 
-        /* ================= MEMBERS ================= */
+.brand h1{
+    color:white;
+    font-size:19px;
+}
 
-        .members {
-            background: #f5f8fc;
-        }
+.brand span{
+    color:#a9bdd5;
+    font-size:12px;
+}
 
-        .members-group {
-            margin-bottom: 60px;
-        }
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 
-        .members-title {
-            text-align: center;
-            color: #123b68;
-            font-size: 23px;
-            margin-bottom: 28px;
-        }
+nav a{
+    color:#dce8f5;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
 
-        .members-title::after {
-            content: "";
+nav a:hover{
+    color:#56c5ff;
+}
 
-            display: block;
+/* HERO */
 
-            width: 50px;
-            height: 3px;
+.hero{
+    min-height:650px;
 
-            background: #1688c9;
-            border-radius: 10px;
+    padding:80px 8%;
 
-            margin: 8px auto 0;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
+    background:
+    radial-gradient(circle at 80% 30%,rgba(40,160,220,.18),transparent 30%),
+    radial-gradient(circle at 20% 80%,rgba(60,100,200,.12),transparent 30%),
+    linear-gradient(135deg,#edf6ff,#fff);
+}
 
-            max-width: 1050px;
-            margin: auto;
-        }
+.hero-content{
+    max-width:650px;
+}
 
-        .member-card {
-            background: white;
-            border: 1px solid #e4ebf3;
+.small-title{
+    display:inline-block;
 
-            border-radius: 18px;
-            padding: 30px 20px;
+    padding:7px 15px;
 
-            text-align: center;
+    border-radius:30px;
 
-            box-shadow: 0 8px 25px rgba(15, 40, 70, 0.06);
+    background:#e1f4ff;
+    color:#0875b4;
 
-            transition: 0.3s;
-        }
+    font-size:13px;
+    font-weight:bold;
 
-        .member-card:hover {
-            transform: translateY(-7px);
+    margin-bottom:20px;
+}
 
-            box-shadow:
-                0 18px 35px rgba(15, 40, 70, 0.12);
+.hero h2{
+    font-size:50px;
+    line-height:1.5;
 
-            border-color: #b9dff2;
-        }
+    color:#07152e;
 
-        .member-icon {
-            width: 70px;
-            height: 70px;
+    margin-bottom:20px;
+}
 
-            margin: 0 auto 18px;
+.hero h2 span{
+    color:#1688c9;
+}
 
-            border-radius: 50%;
+.hero p{
+    color:#5b6b7d;
+    font-size:17px;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.hero-buttons{
+    margin-top:30px;
 
-            background: #e8f6ff;
-            color: #1688c9;
+    display:flex;
+    gap:14px;
+}
 
-            font-size: 27px;
+.btn{
+    padding:12px 24px;
 
-            border: 3px solid #d5effd;
-        }
+    border-radius:9px;
 
-        .member-card h3 {
-            color: #123b68;
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
+    text-decoration:none;
 
-        .member-card span {
-            color: #718096;
-            font-size: 13px;
-        }
+    font-weight:bold;
 
-        .member-card.secretary {
-            border: 2px solid #1688c9;
-            max-width: 300px;
-            margin: auto;
-        }
+    transition:.3s;
+}
 
-        .member-card.secretary .member-icon {
-            background: #1688c9;
-            color: white;
-            border-color: #56c5ff;
-        }
+.primary{
+    background:#1688c9;
+    color:white;
+}
 
-        /* ================= COLLABORATORS ================= */
+.primary:hover{
+    background:#0d6fa8;
+    transform:translateY(-3px);
+}
 
-        .collaborators {
-            background: white;
-        }
+.secondary{
+    background:white;
+    color:#31516e;
 
-        .collaborators-box {
-            max-width: 950px;
-            margin: auto;
+    border:1px solid #b8cde0;
+}
 
-            padding: 35px;
+/* HERO LOGO */
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #f5fbff,
-                    #ffffff
-                );
+.hero-logo{
+    width:350px;
+    height:350px;
 
-            border: 1px solid #dfeaf3;
-            border-radius: 20px;
+    object-fit:contain;
 
-            text-align: center;
+    filter:drop-shadow(0 20px 35px rgba(7,21,46,.15));
+}
 
-            box-shadow:
-                0 10px 30px rgba(15, 40, 70, 0.06);
-        }
+/* SECTIONS */
 
-        .collaborators-box p {
-            max-width: 700px;
-            margin: 0 auto 30px;
+section{
+    padding:90px 8%;
+}
 
-            color: #68778a;
-            font-size: 15px;
-        }
+.section-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
 
-        .collaborator-placeholder {
-            display: inline-flex;
+.section-heading span{
+    color:#1688c9;
 
-            align-items: center;
-            gap: 10px;
+    font-size:13px;
+    font-weight:bold;
+}
 
-            padding: 12px 22px;
+.section-heading h2{
+    font-size:34px;
+    color:#07152e;
 
-            border-radius: 30px;
+    margin-top:7px;
+}
 
-            background: #e8f6ff;
-            color: #1688c9;
+.section-heading p{
+    color:#718096;
+}
 
-            font-size: 14px;
-            font-weight: bold;
-        }
+/* CARDS */
 
-        /* ================= ABOUT ================= */
+.cards{
+    display:grid;
 
-        .about {
-            background: #07152e;
-            color: white;
-        }
+    grid-template-columns:repeat(3,1fr);
 
-        .about .section-heading h2 {
-            color: white;
-        }
+    gap:25px;
+}
 
-        .about .section-heading p {
-            color: #aebed0;
-        }
+.card{
+    background:white;
 
-        .about-content {
-            max-width: 900px;
-            margin: auto;
+    padding:30px;
 
-            text-align: center;
+    border-radius:16px;
 
-            color: #cbd8e6;
+    border:1px solid #e7edf4;
 
-            font-size: 16px;
-            line-height: 2.4;
-        }
+    box-shadow:0 8px 25px rgba(15,40,70,.06);
 
-        /* ================= STATS ================= */
+    transition:.3s;
+}
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+.card:hover{
+    transform:translateY(-7px);
+}
 
-            gap: 20px;
-            margin-top: 50px;
-        }
+.card-icon{
+    width:55px;
+    height:55px;
 
-        .stat {
-            text-align: center;
+    border-radius:13px;
 
-            padding: 25px;
+    background:#e8f6ff;
 
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-        .stat strong {
-            display: block;
+    font-size:25px;
 
-            font-size: 32px;
-            color: #56c5ff;
-        }
+    margin-bottom:18px;
+}
 
-        .stat span {
-            color: #aebed0;
-            font-size: 13px;
-        }
+.card h3{
+    color:#123b68;
+    margin-bottom:8px;
+}
 
-        /* ================= FOOTER ================= */
+.card p{
+    color:#68778a;
+    font-size:14px;
+}
 
-        footer {
-            background: #030a15;
+/* ACHIEVEMENTS */
 
-            color: #9daec3;
+.achievements{
+    background:
+    linear-gradient(135deg,#f5faff,#fff);
+}
 
-            text-align: center;
+.achievements-box{
+    max-width:1100px;
 
-            padding: 30px 20px;
+    margin:auto;
 
-            font-size: 13px;
-        }
+    background:white;
 
-        /* ================= MOBILE ================= */
+    border:1px solid #dfeaf3;
 
-        @media (max-width: 900px) {
+    border-radius:24px;
 
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+    padding:45px;
 
-            nav {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    box-shadow:0 15px 40px rgba(15,40,70,.08);
+}
 
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
+.achievement-intro,
+.achievement-text{
+    color:#4f6073;
 
-            .hero h2 {
-                font-size: 38px;
-            }
+    font-size:16px;
 
-            .hero-buttons {
-                justify-content: center;
-            }
+    line-height:2.3;
 
-            .hero-logo-container {
-                width: 300px;
-                height: 300px;
-            }
+    text-align:justify;
 
-            .cards {
-                grid-template-columns: 1fr;
-            }
+    margin-bottom:25px;
+}
 
-            .members-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+.achievement-highlight{
+    display:grid;
 
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    grid-template-columns:repeat(3,1fr);
 
-        @media (max-width: 500px) {
+    gap:18px;
 
-            .brand-logo {
-                width: 52px;
-                height: 52px;
-            }
+    margin:30px 0;
+}
 
-            .brand h1 {
-                font-size: 16px;
-            }
+.achievement-item{
+    padding:25px;
 
-            .hero h2 {
-                font-size: 30px;
-            }
+    background:#f4faff;
 
-            .hero p {
-                font-size: 15px;
-            }
+    border:1px solid #dceef9;
 
-            .hero-logo-container {
-                width: 230px;
-                height: 230px;
-            }
+    border-radius:16px;
 
-            .members-grid {
-                grid-template-columns: 1fr;
-            }
+    text-align:center;
 
-            .stats {
-                grid-template-columns: 1fr;
-            }
+    transition:.3s;
+}
 
-            section {
-                padding: 60px 6%;
-            }
-        }
+.achievement-item:hover{
+    transform:translateY(-5px);
+}
 
-    </style>
+.achievement-item .icon{
+    width:55px;
+    height:55px;
+
+    margin:0 auto 14px;
+
+    border-radius:50%;
+
+    background:#1688c9;
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+}
+
+.achievement-item h3{
+    color:#123b68;
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+/* ACHIEVEMENT PHOTOS */
+
+.achievement-gallery{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+}
+
+.achievement-photo{
+    background:#f5f8fc;
+
+    padding:12px;
+
+    border-radius:18px;
+
+    border:1px solid #dfe8f1;
+
+    box-shadow:0 10px 25px rgba(15,40,70,.08);
+
+    transition:.3s;
+}
+
+.achievement-photo:hover{
+    transform:translateY(-6px);
+}
+
+.achievement-photo img{
+    width:100%;
+
+    height:auto;
+
+    max-height:550px;
+
+    object-fit:contain;
+
+    display:block;
+
+    border-radius:12px;
+}
+
+.achievement-photo p{
+    text-align:center;
+
+    color:#5d6e80;
+
+    font-size:13px;
+
+    margin-top:10px;
+}
+
+.festival-note{
+    margin-top:35px;
+
+    padding:22px;
+
+    background:#07152e;
+
+    border-radius:16px;
+
+    color:#d9e8f5;
+
+    text-align:center;
+
+    font-size:14px;
+}
+
+.festival-note strong{
+    color:#56c5ff;
+}
+
+/* MEMBERS */
+
+.members{
+    background:#f5f8fc;
+}
+
+.members-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+    max-width:1050px;
+
+    margin:auto;
+}
+
+.member-card{
+    background:white;
+
+    border:1px solid #e4ebf3;
+
+    border-radius:18px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(15,40,70,.06);
+
+    transition:.3s;
+}
+
+.member-card:hover{
+    transform:translateY(-7px);
+}
+
+.member-icon{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e8f6ff;
+
+    color:#1688c9;
+
+    font-size:27px;
+}
+
+.member-card h3{
+    color:#123b68;
+    font-size:17px;
+}
+
+.member-card span{
+    color:#718096;
+    font-size:13px;
+}
+
+.secretary{
+    max-width:300px;
+    margin:0 auto 40px;
+
+    border:2px solid #1688c9;
+}
+
+/* COLLABORATORS */
+
+.collaborators{
+    background:white;
+}
+
+.collaborators-box{
+    max-width:950px;
+
+    margin:auto;
+
+    padding:35px;
+
+    background:#f5fbff;
+
+    border:1px solid #dfeaf3;
+
+    border-radius:20px;
+
+    text-align:center;
+}
+
+.collaborators-box p{
+    color:#68778a;
+
+    font-size:15px;
+
+    margin-bottom:20px;
+}
+
+.collaborator-placeholder{
+    display:inline-block;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    background:#e8f6ff;
+
+    color:#1688c9;
+
+    font-weight:bold;
+}
+
+/* ABOUT */
+
+.about{
+    background:#07152e;
+    color:white;
+}
+
+.about .section-heading h2{
+    color:white;
+}
+
+.about .section-heading p{
+    color:#aebed0;
+}
+
+.about-content{
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    color:#cbd8e6;
+
+    font-size:16px;
+
+    line-height:2.3;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-top:50px;
+}
+
+.stat{
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:14px;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:30px;
+
+    color:#56c5ff;
+}
+
+.stat span{
+    color:#aebed0;
+
+    font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#030a15;
+
+    color:#9daec3;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h2{
+        font-size:38px;
+    }
+
+    .hero-logo{
+        width:280px;
+        height:280px;
+
+        margin-top:40px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .members-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .achievement-highlight{
+        grid-template-columns:1fr;
+    }
+
+    .achievement-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:60px 6%;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .members-grid,
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .achievements-box{
+        padding:25px 18px;
+    }
+
+    .achievement-intro,
+    .achievement-text{
+        text-align:right;
+        font-size:14px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
 
-    <div class="brand">
+<div class="brand">
 
-        <div class="brand-logo">
-            <img src="/images/logo.jpg" alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد">
-        </div>
+<div class="brand-logo">
 
-        <div>
-            <h1>انجمن علمی فیزیک</h1>
-            <span>دانشگاه شهرکرد</span>
-        </div>
+<img
+src="/images/logo.jpg"
+alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد">
 
-    </div>
+</div>
+
+<div>
+
+<h1>انجمن علمی فیزیک</h1>
+
+<span>دانشگاه شهرکرد</span>
+
+</div>
+
+</div>
 
 
-    <nav>
+<nav>
 
-        <a href="#">خانه</a>
+<a href="#">خانه</a>
 
-        <a href="#about">درباره انجمن</a>
+<a href="#about">درباره انجمن</a>
 
-        <a href="#activities">فعالیت‌ها</a>
+<a href="#activities">فعالیت‌ها</a>
 
-        <a href="#members">اعضا</a>
+<a href="#achievements">دستاوردها</a>
 
-        <a href="#collaborators">اعضای همکار</a>
+<a href="#members">اعضا</a>
 
-    </nav>
+<a href="#collaborators">اعضای همکار</a>
+
+</nav>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="small-title">
-            انجمن علمی فیزیک دانشگاه شهرکرد
-        </div>
+<div class="small-title">
+انجمن علمی فیزیک دانشگاه شهرکرد
+</div>
 
-        <h2>
-            دنیای فیزیک را
-            <span>با هم کشف کنیم</span>
-        </h2>
+<h2>
 
-        <p>
-            انجمن علمی فیزیک دانشگاه شهرکرد بستری برای فعالیت‌های علمی،
-            پژوهشی، آموزشی و دانشجویی است؛ جایی برای یادگیری، تجربه،
-            ایده‌پردازی و ساختن آینده‌ای علمی.
-        </p>
+دنیای فیزیک را
 
-        <div class="hero-buttons">
+<span>
+با هم کشف کنیم
+</span>
 
-            <a href="#activities" class="btn primary">
-                فعالیت‌های انجمن
-            </a>
+</h2>
 
-            <a href="#about" class="btn secondary">
-                درباره انجمن
-            </a>
+<p>
 
-        </div>
+انجمن علمی فیزیک دانشگاه شهرکرد بستری برای فعالیت‌های علمی،
+پژوهشی، آموزشی و دانشجویی است؛ جایی برای یادگیری، تجربه،
+ایده‌پردازی و ساختن آینده‌ای علمی.
 
-    </div>
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="#activities"
+class="btn primary">
+
+فعالیت‌های انجمن
+
+</a>
+
+<a
+href="#achievements"
+class="btn secondary">
+
+دستاوردهای انجمن
+
+</a>
+
+</div>
+
+</div>
 
 
-    <div class="hero-logo-container">
-
-        <img
-            src="/images/logo.jpg"
-            alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد"
-            class="hero-logo"
-        >
-
-    </div>
+<img
+class="hero-logo"
+src="/images/logo.jpg"
+alt="انجمن علمی فیزیک دانشگاه شهرکرد">
 
 </section>
 
 
-<!-- ================= ACTIVITIES ================= -->
+
+<!-- ACTIVITIES -->
 
 <section id="activities">
 
-    <div class="section-heading">
+<div class="section-heading">
 
-        <span>WHAT WE DO</span>
+<span>WHAT WE DO</span>
 
-        <h2>فعالیت‌های انجمن</h2>
+<h2>فعالیت‌های انجمن</h2>
 
-        <p>
-            بخشی از زمینه‌های فعالیت انجمن علمی فیزیک
-        </p>
+<p>
+بخشی از زمینه‌های فعالیت انجمن علمی فیزیک
+</p>
 
-    </div>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="card-icon">🔬</div>
-
-            <h3>فعالیت‌های پژوهشی</h3>
-
-            <p>
-                ایجاد فرصت برای مشارکت دانشجویان در فعالیت‌های پژوهشی
-                و علمی حوزه فیزیک.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="card">
+<div class="cards">
 
-            <div class="card-icon">🎓</div>
+<div class="card">
 
-            <h3>آموزش و کارگاه‌ها</h3>
+<div class="card-icon">🔬</div>
 
-            <p>
-                برگزاری کارگاه‌ها، دوره‌های آموزشی، نشست‌های تخصصی
-                و برنامه‌های علمی.
-            </p>
+<h3>فعالیت‌های پژوهشی</h3>
 
-        </div>
+<p>
+ایجاد فرصت برای مشارکت دانشجویان در فعالیت‌های پژوهشی
+و علمی حوزه فیزیک.
+</p>
 
-
-        <div class="card">
-
-            <div class="card-icon">📰</div>
-
-            <h3>نشریات علمی</h3>
-
-            <p>
-                تولید و انتشار محتوای علمی، مقالات، بولتن‌ها
-                و نشریات دانشجویی.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icon">🧠</div>
+<div class="card-icon">🎓</div>
 
-            <h3>مسابقات علمی</h3>
+<h3>آموزش و کارگاه‌ها</h3>
 
-            <p>
-                برگزاری مسابقات و چالش‌های علمی برای افزایش
-                انگیزه و خلاقیت دانشجویان.
-            </p>
+<p>
+برگزاری کارگاه‌ها، دوره‌های آموزشی، نشست‌های تخصصی
+و برنامه‌های علمی.
+</p>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">💡</div>
-
-            <h3>ایده و نوآوری</h3>
-
-            <p>
-                فراهم کردن بستری برای ارائه ایده‌ها و پروژه‌های
-                علمی دانشجویان.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icon">🌌</div>
+<div class="card-icon">📰</div>
 
-            <h3>ترویج علم</h3>
+<h3>نشریات علمی</h3>
 
-            <p>
-                معرفی جذاب و کاربردی علم فیزیک به دانشجویان
-                و علاقه‌مندان.
-            </p>
+<p>
+تولید و انتشار محتوای علمی، مقالات، بولتن‌ها و
+نشریات دانشجویی.
+</p>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="card">
+
+<div class="card-icon">🧠</div>
+
+<h3>مسابقات علمی</h3>
+
+<p>
+برگزاری مسابقات و چالش‌های علمی برای افزایش انگیزه
+و خلاقیت دانشجویان.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">💡</div>
+
+<h3>ایده و نوآوری</h3>
+
+<p>
+فراهم کردن بستری برای ارائه ایده‌ها و پروژه‌های
+علمی دانشجویان.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🌌</div>
+
+<h3>ترویج علم</h3>
+
+<p>
+معرفی جذاب و کاربردی علم فیزیک به دانشجویان
+و علاقه‌مندان.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= MEMBERS ================= -->
 
-<section class="members" id="members">
+<!-- ACHIEVEMENTS -->
 
-    <div class="section-heading">
+<section
+class="achievements"
+id="achievements">
 
-        <span>OUR TEAM</span>
+<div class="section-heading">
 
-        <h2>اعضای انجمن</h2>
+<span>ACHIEVEMENTS & HONORS</span>
 
-        <p>
-            اعضای انجمن علمی فیزیک دانشگاه شهرکرد
-        </p>
+<h2>دستاوردها و افتخارات</h2>
 
-    </div>
+<p>
+افتخارات انجمن علمی فیزیک دانشگاه شهرکرد
+</p>
 
-
-    <div class="members-group">
-
-        <h3 class="members-title">
-            دبیر انجمن
-        </h3>
-
-        <div class="members-grid">
-
-            <div class="member-card secretary">
-
-                <div class="member-icon">⚛</div>
-
-                <h3>مائده ابراهیمی</h3>
-
-                <span>
-                    دبیر انجمن علمی فیزیک
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="members-group">
-
-        <h3 class="members-title">
-            اعضای اصلی
-        </h3>
-
-        <div class="members-grid">
-
-            <div class="member-card">
-
-                <div class="member-icon">👤</div>
-
-                <h3>فاطمه کاظمی</h3>
-
-                <span>عضو اصلی</span>
-
-            </div>
+<div class="achievements-box">
 
 
-            <div class="member-card">
+<div class="achievement-intro">
 
-                <div class="member-icon">👤</div>
+انجمن علمی فیزیک دانشگاه شهرکرد در هجدهمین جشنواره بین‌المللی
+حرکت ۱۴۰۳–۱۴۰۴ در تبریز موفق به کسب چندین عنوان شد.
 
-                <h3>ابوالفضل اکبری</h3>
-
-                <span>عضو اصلی</span>
-
-            </div>
+</div>
 
 
-            <div class="member-card">
-
-                <div class="member-icon">👤</div>
-
-                <h3>محمدطاها خلیلی</h3>
-
-                <span>عضو اصلی</span>
-
-            </div>
+<div class="achievement-highlight">
 
 
-            <div class="member-card">
+<div class="achievement-item">
 
-                <div class="member-icon">👤</div>
+<div class="icon">🏆</div>
 
-                <h3>مهشید دلفی</h3>
+<h3>
+کسب رتبه‌ی برگزیده در بخش سکوی حرکت انجمن‌های علمی و دانشجویی
+دانشگاه‌های کشور
+</h3>
 
-                <span>عضو اصلی</span>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="members-group">
+<div class="achievement-item">
 
-        <h3 class="members-title">
-            اعضای علی‌البدل
-        </h3>
+<div class="icon">🥇</div>
 
-        <div class="members-grid">
+<h3>
+کسب رتبه‌ی برگزیده در بخش «رویداد علمی» گروه علوم پایه،
+علوم زیستی و بهداشت
+</h3>
 
-            <div class="member-card">
-
-                <div class="member-icon">👤</div>
-
-                <h3>آیدا قربانی</h3>
-
-                <span>عضو علی‌البدل</span>
-
-            </div>
+</div>
 
 
-            <div class="member-card">
+<div class="achievement-item">
 
-                <div class="member-icon">👤</div>
+<div class="icon">🎓</div>
 
-                <h3>نیلوفر صمدانی</h3>
+<h3>
+کسب رتبه‌ی شایسته تقدیر در بخش «آموزشی» گروه علوم پایه،
+علوم زیستی و بهداشت
+</h3>
 
-                <span>عضو علی‌البدل</span>
+</div>
 
-            </div>
+</div>
 
-        </div>
 
-    </div>
+<div class="achievement-text">
+
+همچنین کسب رتبه انجمن برگزیده در جشنواره درون دانشگاهی
+حرکت ۱۴۰۳–۱۴۰۴ از دستاوردهای انجمن علمی فیزیک دانشگاه شهرکرد بود.
+
+</div>
+
+
+<div class="achievement-text">
+
+گفتنی است؛ دکتر محمد روشن‌ضمیر به‌عنوان استاد مشاور،
+و مائده ابراهیمی به عنوان دبیر انجمن علمی فیزیک دانشگاه شهرکرد بودند.
+
+</div>
+
+
+<!-- PHOTOS -->
+
+<div class="achievement-gallery">
+
+
+<div class="achievement-photo">
+
+<img
+src="/images/harkat1.jpg"
+alt="جشنواره حرکت - انجمن علمی فیزیک دانشگاه شهرکرد">
+
+<p>
+هجدهمین جشنواره بین‌المللی حرکت
+</p>
+
+</div>
+
+
+<div class="achievement-photo">
+
+<img
+src="/images/harkat2.jpg"
+alt="افتخارات انجمن علمی فیزیک دانشگاه شهرکرد">
+
+<p>
+افتخارات انجمن علمی فیزیک دانشگاه شهرکرد
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="festival-note">
+
+<strong>
+هجدهمین جشنواره بین‌المللی حرکت
+</strong>
+
+<br>
+
+تبریز | سال تحصیلی ۱۴۰۳–۱۴۰۴
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- ================= COLLABORATORS ================= -->
 
-<section class="collaborators" id="collaborators">
+<!-- MEMBERS -->
 
-    <div class="section-heading">
+<section
+class="members"
+id="members">
 
-        <span>COLLABORATORS</span>
+<div class="section-heading">
 
-        <h2>اعضای همکار انجمن</h2>
+<span>OUR TEAM</span>
 
-        <p>
-            دانشجویان فعال و همراه انجمن علمی فیزیک
-        </p>
+<h2>اعضای انجمن</h2>
 
-    </div>
+<p>
+شورای مرکزی انجمن علمی فیزیک دانشگاه شهرکرد
+</p>
+
+</div>
 
 
-    <div class="collaborators-box">
+<div class="member-card secretary">
 
-        <p>
-            اعضای همکار انجمن، دانشجویان علاقه‌مند و فعالی هستند که
-            در برگزاری برنامه‌های علمی، آموزشی، پژوهشی، فرهنگی و اجرایی
-            انجمن مشارکت می‌کنند.
-        </p>
+<div class="member-icon">
+👩‍🔬
+</div>
 
-        <div class="collaborator-placeholder">
-            🤝 دانشجویان همکار انجمن
-        </div>
+<h3>
+مائده ابراهیمی
+</h3>
 
-    </div>
+<span>
+دبیر انجمن علمی فیزیک
+</span>
+
+</div>
+
+
+<div class="members-grid">
+
+
+<div class="member-card">
+
+<div class="member-icon">🔬</div>
+
+<h3>
+ابوالفضل اکبری
+</h3>
+
+<span>
+مسئول پژوهشی
+</span>
+
+</div>
+
+
+<div class="member-card">
+
+<div class="member-icon">📚</div>
+
+<h3>
+محمدطاها خلیلی
+</h3>
+
+<span>
+مسئول آموزشی
+</span>
+
+</div>
+
+
+<div class="member-card">
+
+<div class="member-icon">👩‍🎓</div>
+
+<h3>
+فاطمه کاظمی
+</h3>
+
+<span>
+نائب دبیر
+</span>
+
+</div>
+
+
+<div class="member-card">
+
+<div class="member-icon">⚙️</div>
+
+<h3>
+مهشید دلفی
+</h3>
+
+<span>
+مسئول اجرایی
+</span>
+
+</div>
+
+
+<div class="member-card">
+
+<div class="member-icon">⚙️</div>
+
+<h3>
+نیلوفر صمدانی
+</h3>
+
+<span>
+مسئول اجرایی
+</span>
+
+</div>
+
+
+<div class="member-card">
+
+<div class="member-icon">📰</div>
+
+<h3>
+مهشید دلفی
+</h3>
+
+<span>
+مسئول نشریات
+</span>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- ================= ABOUT ================= -->
 
-<section class="about" id="about">
+<!-- COLLABORATORS -->
 
-    <div class="section-heading">
+<section
+class="collaborators"
+id="collaborators">
 
-        <span>ABOUT US</span>
+<div class="section-heading">
 
-        <h2>درباره انجمن علمی فیزیک</h2>
+<span>COLLABORATORS</span>
 
-        <p>دانشگاه شهرکرد</p>
+<h2>اعضای همکار</h2>
 
-    </div>
+<p>
+دانشجویان و علاقه‌مندانی که در فعالیت‌های انجمن همکاری می‌کنند
+</p>
 
-
-    <div class="about-content">
-
-        انجمن علمی فیزیک دانشگاه شهرکرد با هدف ایجاد بستری پویا برای
-        فعالیت‌های علمی، آموزشی، پژوهشی و فرهنگی دانشجویان شکل گرفته است.
-
-        <br><br>
-
-        این انجمن تلاش می‌کند با برگزاری برنامه‌های علمی، کارگاه‌ها،
-        نشست‌های تخصصی، مسابقات، فعالیت‌های پژوهشی و تولید محتوای علمی،
-        زمینه رشد و شکوفایی استعدادهای دانشجویان را فراهم کند.
-
-    </div>
+</div>
 
 
-    <div class="stats">
+<div class="collaborators-box">
 
-        <div class="stat">
+<p>
 
-            <strong>+</strong>
+اعضای همکار انجمن در برگزاری رویدادها، برنامه‌های آموزشی،
+فعالیت‌های پژوهشی و تولید محتوای علمی مشارکت دارند.
 
-            <span>برنامه‌های علمی</span>
+</p>
 
-        </div>
+<div class="collaborator-placeholder">
 
+✨ همراهان انجمن علمی فیزیک
 
-        <div class="stat">
+</div>
 
-            <strong>۷</strong>
-
-            <span>اعضای انجمن</span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>+</strong>
-
-            <span>کارگاه و نشست</span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>∞</strong>
-
-            <span>ایده‌های جدید</span>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- ABOUT -->
+
+<section
+class="about"
+id="about">
+
+<div class="section-heading">
+
+<span>ABOUT US</span>
+
+<h2>
+درباره انجمن علمی فیزیک
+</h2>
+
+<p>
+دانشگاه شهرکرد
+</p>
+
+</div>
+
+
+<div class="about-content">
+
+انجمن علمی فیزیک دانشگاه شهرکرد با هدف گسترش فعالیت‌های علمی،
+پژوهشی و آموزشی و ایجاد بستری برای رشد علمی و خلاقیت دانشجویان
+فعالیت می‌کند.
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<strong>۱۴۰۳</strong>
+
+<span>
+سال فعالیت
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>۳</strong>
+
+<span>
+عنوان در جشنواره حرکت
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>۱</strong>
+
+<span>
+رتبه برگزیده دانشگاهی
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>∞</strong>
+
+<span>
+ایده برای آینده
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    <p>
-        © ۱۴۰۵ انجمن علمی فیزیک دانشگاه شهرکرد
-    </p>
+انجمن علمی فیزیک دانشگاه شهرکرد
 
-    <p>
-        تمامی حقوق این وب‌سایت محفوظ است.
-    </p>
+<br>
+
+تمامی حقوق این وب‌سایت متعلق به انجمن علمی فیزیک دانشگاه شهرکرد است.
 
 </footer>
 
