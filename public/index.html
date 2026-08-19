@@ -3,973 +3,1435 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>انجمن علمی فیزیک دانشگاه شهرکرد</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>انجمن علمی فیزیک دانشگاه شهرکرد</title>
+
+<meta name="description" content="وب‌سایت رسمی انجمن علمی فیزیک دانشگاه شهرکرد؛ فعالیت‌های علمی، آموزشی، پژوهشی، نجومی و دستاوردهای انجمن.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Vazirmatn",sans-serif;
+    background:#061426;
+    color:#172337;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   PARTICLE / PHYSICS BACKGROUND
+===================================================== */
+
+#physics-bg{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(20,150,220,.08),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(50,90,220,.08),transparent 30%),
+        #061426;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#67d5ff;
+    opacity:.45;
+    animation:particleMove linear infinite;
+}
+
+.p1{top:15%;left:10%;animation-duration:13s}
+.p2{top:70%;left:15%;animation-duration:17s}
+.p3{top:30%;left:75%;animation-duration:15s}
+.p4{top:80%;left:80%;animation-duration:19s}
+.p5{top:45%;left:50%;animation-duration:12s}
+.p6{top:10%;left:60%;animation-duration:21s}
+.p7{top:65%;left:40%;animation-duration:16s}
+
+@keyframes particleMove{
+    0%{transform:translate(0,0);opacity:.2}
+    50%{transform:translate(35px,-50px);opacity:.8}
+    100%{transform:translate(-20px,20px);opacity:.2}
+}
+
+.orbit{
+    position:absolute;
+    border:1px solid rgba(81,198,255,.12);
+    border-radius:50%;
+}
+
+.orbit.one{
+    width:420px;
+    height:420px;
+    top:5%;
+    right:-150px;
+    transform:rotate(25deg);
+}
+
+.orbit.two{
+    width:600px;
+    height:250px;
+    bottom:5%;
+    left:-220px;
+    transform:rotate(-25deg);
+}
+
+.physics-symbol{
+    position:absolute;
+    color:rgba(91,205,255,.07);
+    font-size:90px;
+    font-weight:300;
+    user-select:none;
+}
+
+.symbol1{top:20%;right:7%}
+.symbol2{bottom:15%;left:8%;font-size:70px}
+.symbol3{top:55%;right:42%;font-size:55px}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+
+    height:76px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:rgba(4,17,34,.82);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    background:white;
+    border-radius:50%;
+    padding:3px;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
 
-        body {
-            font-family: "Vazirmatn", sans-serif;
-            background: #f4f8fc;
-            color: #172033;
-            line-height: 2;
-            overflow-x: hidden;
-        }
+.brand-text h1{
+    color:white;
+    font-size:15px;
+    font-weight:800;
+}
 
-        a {
-            text-decoration: none;
-        }
+.brand-text span{
+    color:#8da6bd;
+    font-size:10px;
+}
 
-        /* ================= HEADER ================= */
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+/* =====================================================
+   DASHBOARD BUTTON
+===================================================== */
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+.menu-btn{
+    width:48px;
+    height:48px;
 
-            padding: 12px 7%;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:13px;
 
-            background: rgba(5, 18, 42, 0.96);
-            backdrop-filter: blur(15px);
+    background:rgba(255,255,255,.06);
+    color:white;
 
-            box-shadow: 0 5px 25px rgba(0,0,0,.15);
-        }
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    cursor:pointer;
 
-        .brand-logo {
-            width: 58px;
-            height: 58px;
+    transition:.3s;
+}
 
-            background: white;
-            border-radius: 50%;
+.menu-btn:hover{
+    background:#168dcc;
+    transform:scale(1.05);
+}
 
-            padding: 4px;
+.menu-btn span{
+    width:22px;
+    height:2px;
+    background:white;
+    border-radius:5px;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
-            overflow: hidden;
-        }
+/* =====================================================
+   SIDE DASHBOARD
+===================================================== */
 
-        .brand-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:1100;
 
-        .brand h1 {
-            color: white;
-            font-size: 17px;
-            font-weight: 800;
-        }
+    opacity:0;
+    visibility:hidden;
 
-        .brand span {
-            color: #9db2ca;
-            font-size: 11px;
-        }
+    transition:.3s;
+}
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 22px;
-            flex-wrap: wrap;
-        }
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
 
-        nav a {
-            color: #d9e5f2;
-            font-size: 13px;
-            transition: .3s;
-        }
+.dashboard{
+    position:fixed;
+    top:0;
+    right:-350px;
 
-        nav a:hover {
-            color: #53c7ff;
-        }
+    width:330px;
+    max-width:90vw;
+    height:100vh;
 
+    z-index:1200;
 
-        /* ================= HERO ================= */
+    background:
+        radial-gradient(circle at 80% 10%,rgba(31,156,222,.15),transparent 30%),
+        #071a31;
 
-        .hero {
-            min-height: 680px;
+    border-left:1px solid rgba(255,255,255,.08);
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    padding:28px 22px;
 
-            padding: 90px 9%;
+    transition:.45s cubic-bezier(.77,0,.18,1);
 
-            position: relative;
-            overflow: hidden;
+    overflow-y:auto;
+}
 
-            background:
-                radial-gradient(circle at 85% 20%, rgba(29, 151, 218, .22), transparent 25%),
-                radial-gradient(circle at 15% 85%, rgba(63, 105, 220, .16), transparent 30%),
-                linear-gradient(135deg, #edf7ff, #ffffff);
-        }
+.dashboard.active{
+    right:0;
+}
 
-        .hero::before {
-            content: "";
-            position: absolute;
+.dashboard-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-            width: 500px;
-            height: 500px;
+    padding-bottom:25px;
 
-            border-radius: 50%;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
 
-            background: rgba(41, 145, 210, .07);
+.dashboard-head h2{
+    color:white;
+    font-size:19px;
+}
 
-            top: -250px;
-            left: -150px;
+.close-btn{
+    width:38px;
+    height:38px;
 
-            animation: float 8s ease-in-out infinite;
-        }
+    border:none;
+    border-radius:10px;
 
-        .hero-content {
-            max-width: 650px;
-            z-index: 2;
-        }
+    background:rgba(255,255,255,.08);
+    color:white;
 
-        .small-title {
-            display: inline-block;
+    font-size:22px;
+    cursor:pointer;
+}
 
-            padding: 8px 17px;
+.dashboard-subtitle{
+    color:#7f9ab2;
+    font-size:11px;
+    margin:20px 5px 12px;
+}
 
-            border-radius: 50px;
+.dashboard a{
+    display:flex;
+    align-items:center;
+    gap:14px;
 
-            background: #e0f4ff;
-            color: #0876b7;
+    padding:14px 13px;
 
-            font-size: 13px;
-            font-weight: 700;
+    margin-bottom:6px;
 
-            margin-bottom: 20px;
-        }
+    border-radius:12px;
 
-        .hero h2 {
-            font-size: 52px;
-            line-height: 1.55;
+    color:#dbe8f3;
 
-            color: #071a35;
+    font-size:13px;
 
-            font-weight: 900;
+    transition:.3s;
+}
 
-            margin-bottom: 20px;
-        }
+.dashboard a:hover{
+    background:rgba(45,173,230,.13);
+    color:#60d4ff;
+    transform:translateX(-5px);
+}
 
-        .hero h2 span {
-            color: #148ed0;
-        }
+.dash-icon{
+    width:38px;
+    height:38px;
 
-        .hero p {
-            font-size: 16px;
-            color: #5b6d7e;
-            max-width: 600px;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
+    background:rgba(255,255,255,.06);
+    border-radius:10px;
 
-            margin-top: 30px;
-        }
+    font-size:18px;
+}
 
-        .btn {
-            padding: 13px 25px;
-            border-radius: 10px;
 
-            font-size: 14px;
-            font-weight: 700;
+/* =====================================================
+   HERO
+===================================================== */
 
-            transition: .3s;
-        }
+.hero{
+    min-height:100vh;
 
-        .primary {
-            background: #148ed0;
-            color: white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-            box-shadow: 0 8px 20px rgba(20, 142, 208, .25);
-        }
+    padding:130px 9% 80px;
 
-        .primary:hover {
-            transform: translateY(-4px);
-            background: #0874ad;
-        }
+    position:relative;
+    overflow:hidden;
 
-        .secondary {
-            background: white;
-            color: #254968;
+    background:
+        radial-gradient(circle at 75% 45%,rgba(17,140,210,.16),transparent 30%),
+        linear-gradient(135deg,#061426,#0a2039);
 
-            border: 1px solid #cbdce9;
-        }
+    color:white;
+}
 
-        .secondary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,.08);
-        }
+.hero-content{
+    max-width:650px;
+    z-index:2;
 
-        .hero-logo {
-            width: 360px;
-            height: 360px;
+    animation:heroIn 1.1s ease both;
+}
 
-            object-fit: contain;
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-            z-index: 2;
+.badge{
+    display:inline-block;
 
-            filter: drop-shadow(0 25px 35px rgba(8, 35, 65, .18));
+    padding:8px 16px;
 
-            animation: float 5s ease-in-out infinite;
-        }
+    border:1px solid rgba(87,204,255,.3);
 
+    background:rgba(35,156,215,.08);
 
-        /* ================= SECTIONS ================= */
+    border-radius:40px;
 
-        section {
-            padding: 95px 8%;
-        }
+    color:#62d3ff;
 
-        .section-heading {
-            text-align: center;
-            margin-bottom: 55px;
-        }
+    font-size:12px;
+    font-weight:700;
 
-        .section-heading span {
-            color: #148ed0;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
+    margin-bottom:25px;
+}
 
-        .section-heading h2 {
-            font-size: 35px;
-            color: #071a35;
-            font-weight: 900;
-            margin-top: 8px;
-        }
+.hero h2{
+    font-size:58px;
+    line-height:1.5;
+    font-weight:900;
 
-        .section-heading p {
-            color: #718096;
-            font-size: 14px;
-            margin-top: 8px;
-        }
+    margin-bottom:20px;
+}
 
+.hero h2 span{
+    color:#55ceff;
 
-        /* ================= ACTIVITIES ================= */
+    text-shadow:0 0 30px rgba(60,200,255,.3);
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.hero p{
+    color:#a9bdcf;
+    font-size:16px;
+    line-height:2.3;
+}
 
-        .card {
-            background: white;
+.hero-buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
 
-            padding: 32px;
+    margin-top:32px;
+}
 
-            border-radius: 20px;
+.btn{
+    padding:13px 23px;
+    border-radius:12px;
 
-            border: 1px solid #e3edf5;
+    font-size:13px;
+    font-weight:700;
 
-            box-shadow: 0 10px 30px rgba(20, 50, 80, .06);
+    transition:.3s;
+}
 
-            transition: .35s;
-        }
+.btn-primary{
+    color:white;
+    background:#168dcc;
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(20, 80, 130, .13);
-        }
+    box-shadow:0 10px 30px rgba(22,141,204,.25);
+}
 
-        .card-icon {
-            width: 58px;
-            height: 58px;
+.btn-primary:hover{
+    transform:translateY(-5px);
+    background:#1aa3e8;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.btn-secondary{
+    color:#dceaf4;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);
+}
 
-            background: #e8f7ff;
+.btn-secondary:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.1);
+}
 
-            border-radius: 16px;
 
-            font-size: 26px;
+/* =====================================================
+   HERO LOGO
+===================================================== */
 
-            margin-bottom: 18px;
-        }
+.hero-visual{
+    position:relative;
+    width:420px;
+    height:420px;
 
-        .card h3 {
-            color: #123d68;
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-        .card p {
-            color: #6c7b8d;
-            font-size: 14px;
-        }
+.hero-logo{
+    width:310px;
+    height:310px;
 
+    object-fit:contain;
 
-        /* ================= ACHIEVEMENTS ================= */
+    background:white;
+    border-radius:50%;
+    padding:12px;
 
-        .achievements {
-            background: linear-gradient(135deg, #edf8ff, #ffffff);
-        }
+    box-shadow:
+        0 0 0 15px rgba(70,198,255,.04),
+        0 0 70px rgba(40,170,230,.15);
 
-        .achievements-box {
-            max-width: 1100px;
-            margin: auto;
+    animation:logoFloat 5s ease-in-out infinite;
 
-            background: white;
+    z-index:2;
+}
 
-            padding: 45px;
+@keyframes logoFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-14px)}
+}
 
-            border-radius: 25px;
+.hero-orbit{
+    position:absolute;
+    width:400px;
+    height:180px;
 
-            border: 1px solid #dce9f3;
+    border:1px solid rgba(81,207,255,.2);
+    border-radius:50%;
 
-            box-shadow: 0 15px 45px rgba(15, 50, 80, .08);
-        }
+    transform:rotate(35deg);
 
-        .achievement-intro,
-        .achievement-text {
-            color: #506174;
-            font-size: 16px;
-            line-height: 2.5;
-            text-align: justify;
-            margin-bottom: 25px;
-        }
+    animation:orbitSpin 14s linear infinite;
+}
 
-        .achievement-highlight {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+@keyframes orbitSpin{
+    to{transform:rotate(395deg)}
+}
 
-            margin: 35px 0;
-        }
 
-        .achievement-item {
-            background: #f3faff;
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
 
-            padding: 25px;
+section{
+    padding:100px 8%;
+    position:relative;
+}
 
-            border-radius: 18px;
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
 
-            border: 1px solid #d7edf9;
+.section-title small{
+    color:#1698d8;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1px;
+}
 
-            text-align: center;
+.section-title h2{
+    font-size:36px;
+    color:#071a35;
+    margin-top:8px;
+    font-weight:900;
+}
 
-            transition: .3s;
-        }
+.section-title p{
+    color:#708295;
+    font-size:14px;
+}
 
-        .achievement-item:hover {
-            transform: translateY(-6px);
-        }
 
-        .achievement-item .icon {
-            width: 58px;
-            height: 58px;
+/* =====================================================
+   ACTIVITIES
+===================================================== */
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.activities{
+    background:#f5f9fc;
+}
 
-            margin: auto auto 15px;
+.cards{
+    max-width:1100px;
+    margin:auto;
 
-            border-radius: 50%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:23px;
+}
 
-            background: #148ed0;
-            color: white;
+.card{
+    background:white;
 
-            font-size: 25px;
-        }
+    padding:30px;
 
-        .achievement-item h3 {
-            color: #173d64;
-            font-size: 14px;
-            line-height: 2;
-        }
+    border-radius:22px;
 
-        .achievement-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+    border:1px solid #e2edf4;
 
-            margin-top: 40px;
-        }
+    box-shadow:0 10px 35px rgba(13,46,75,.06);
 
-        .achievement-photo {
-            padding: 12px;
-            background: #f6f9fc;
+    transition:.4s;
 
-            border-radius: 20px;
+    opacity:0;
+    transform:translateY(30px);
+}
 
-            border: 1px solid #e0eaf2;
+.card.visible{
+    opacity:1;
+    transform:translateY(0);
+}
 
-            transition: .35s;
-        }
+.card:hover{
+    transform:translateY(-9px);
+    box-shadow:0 20px 45px rgba(12,78,120,.13);
+}
 
-        .achievement-photo:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 30px rgba(0,0,0,.1);
-        }
+.card-icon{
+    width:60px;
+    height:60px;
 
-        .achievement-photo img {
-            width: 100%;
-            display: block;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            border-radius: 14px;
+    border-radius:17px;
 
-            max-height: 550px;
-            object-fit: contain;
-        }
+    background:#e7f7ff;
 
-        .achievement-photo p {
-            text-align: center;
-            color: #647689;
-            font-size: 13px;
-            margin-top: 10px;
-        }
+    font-size:27px;
 
-        .festival-note {
-            margin-top: 35px;
-            padding: 22px;
+    margin-bottom:18px;
+}
 
-            background: #071a35;
+.card h3{
+    color:#173f65;
+    font-size:16px;
+    margin-bottom:8px;
+}
 
-            color: #dceafa;
+.card p{
+    color:#6c7c8d;
+    font-size:13px;
+    line-height:2;
+}
 
-            border-radius: 16px;
 
-            text-align: center;
-        }
+/* =====================================================
+   ACHIEVEMENTS
+===================================================== */
 
-        .festival-note strong {
-            color: #5ecbff;
-        }
+.achievements{
+    background:
+        radial-gradient(circle at 20% 30%,rgba(36,162,220,.08),transparent 30%),
+        white;
+}
 
+.achievement-box{
+    max-width:1100px;
+    margin:auto;
 
-        /* ================= MEMBERS ================= */
+    background:#f7fbfe;
 
-        .members {
-            background: #f4f8fc;
-        }
+    padding:40px;
 
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+    border-radius:26px;
 
-            max-width: 1050px;
-            margin: auto;
-        }
+    border:1px solid #dceaf3;
 
-        .member-card {
-            background: white;
+    box-shadow:0 15px 45px rgba(10,45,70,.06);
+}
 
-            padding: 30px 20px;
+.achievement-text{
+    color:#56697b;
+    font-size:15px;
+    line-height:2.6;
+    text-align:justify;
+    margin-bottom:25px;
+}
 
-            text-align: center;
+.achievement-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin:30px 0;
+}
 
-            border-radius: 20px;
+.achievement-item{
+    padding:25px;
 
-            border: 1px solid #e2ebf2;
+    background:white;
 
-            transition: .35s;
+    border-radius:18px;
 
-            box-shadow: 0 8px 25px rgba(15,40,70,.05);
-        }
+    border:1px solid #e0edf4;
 
-        .member-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 18px 35px rgba(15,60,100,.1);
-        }
+    text-align:center;
 
-        .member-icon {
-            width: 72px;
-            height: 72px;
+    transition:.35s;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.achievement-item:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 30px rgba(0,0,0,.07);
+}
 
-            margin: auto auto 17px;
+.achievement-icon{
+    width:55px;
+    height:55px;
 
-            border-radius: 50%;
+    margin:auto auto 14px;
 
-            background: #e7f6ff;
+    border-radius:50%;
 
-            font-size: 27px;
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-        .member-card h3 {
-            color: #173d64;
-            font-size: 16px;
-        }
+    background:#158fcf;
+    color:white;
 
-        .member-card span {
-            color: #738396;
-            font-size: 13px;
-        }
+    font-size:23px;
+}
 
-        .secretary {
-            max-width: 310px;
-            margin: 0 auto 40px;
+.achievement-item h3{
+    color:#214665;
+    font-size:13px;
+    line-height:2;
+}
 
-            border: 2px solid #148ed0;
-        }
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-top:35px;
+}
 
+.gallery img{
+    width:100%;
+    max-height:550px;
+    object-fit:contain;
 
-        /* ================= COLLABORATORS ================= */
+    background:white;
 
-        .collaborators {
-            background: white;
-        }
+    padding:8px;
 
-        .collaborators-box {
-            max-width: 950px;
-            margin: auto;
+    border-radius:18px;
 
-            padding: 40px;
+    border:1px solid #e0eaf1;
 
-            text-align: center;
+    transition:.4s;
+}
 
-            border-radius: 22px;
+.gallery img:hover{
+    transform:scale(1.02);
+    box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
 
-            background: #f3faff;
 
-            border: 1px solid #dcebf5;
-        }
+/* =====================================================
+   ABOUT
+===================================================== */
 
-        .collaborators-box p {
-            color: #66788a;
-        }
+.about{
+    background:
+        radial-gradient(circle at 80% 10%,rgba(41,168,225,.14),transparent 30%),
+        #071a31;
 
-        .collaborator-placeholder {
-            display: inline-block;
+    color:white;
+}
 
-            margin-top: 18px;
+.about .section-title h2{
+    color:white;
+}
 
-            padding: 12px 25px;
+.about .section-title p{
+    color:#9eb5c9;
+}
 
-            border-radius: 40px;
+.about-content{
+    max-width:1050px;
+    margin:auto;
+}
 
-            background: white;
+.about-text{
+    padding:38px;
 
-            color: #148ed0;
+    background:rgba(255,255,255,.045);
 
-            font-weight: 700;
-        }
+    border:1px solid rgba(255,255,255,.1);
 
+    border-radius:25px;
 
-        /* ================= ABOUT ================= */
+    color:#d3e1ed;
 
-        .about {
-            background:
-                radial-gradient(circle at 80% 20%, rgba(40,150,220,.2), transparent 25%),
-                linear-gradient(135deg, #06172f, #0a2848);
+    font-size:15px;
+    line-height:2.7;
 
-            color: white;
-        }
+    text-align:justify;
+}
 
-        .about .section-heading h2 {
-            color: white;
-        }
+.about-text p{
+    margin-bottom:25px;
+}
 
-        .about .section-heading p {
-            color: #aec4d9;
-        }
+.about-text p:last-child{
+    margin-bottom:0;
+}
 
-        .about-content {
-            max-width: 1050px;
-            margin: auto;
-        }
+.about-text strong{
+    color:#64d5ff;
+}
 
-        .about-text {
-            background: rgba(255,255,255,.05);
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 
-            border: 1px solid rgba(255,255,255,.1);
+    margin-top:30px;
+}
 
-            padding: 38px;
+.stat{
+    text-align:center;
 
-            border-radius: 24px;
+    padding:22px;
 
-            color: #d5e3ef;
+    border-radius:17px;
 
-            line-height: 2.6;
+    background:rgba(255,255,255,.05);
 
-            text-align: justify;
-        }
+    border:1px solid rgba(255,255,255,.08);
 
-        .about-text p {
-            margin-bottom: 25px;
-        }
+    transition:.3s;
+}
 
-        .about-text p:last-child {
-            margin-bottom: 0;
-        }
+.stat:hover{
+    transform:translateY(-6px);
+}
 
-        .about-text strong {
-            color: #71d3ff;
-            font-weight: 700;
-        }
+.stat strong{
+    display:block;
+    color:#5dd2ff;
+    font-size:28px;
+}
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+.stat span{
+    color:#a9bfd1;
+    font-size:12px;
+}
 
-            margin-top: 40px;
-        }
 
-        .stat {
-            padding: 25px;
-            text-align: center;
+/* =====================================================
+   MEMBERS
+===================================================== */
 
-            border-radius: 18px;
+.members{
+    background:#f4f8fb;
+}
 
-            background: rgba(255,255,255,.06);
+.secretary{
+    max-width:330px;
+    margin:0 auto 35px;
+}
 
-            border: 1px solid rgba(255,255,255,.1);
+.member-card{
+    background:white;
 
-            transition: .3s;
-        }
+    padding:28px 18px;
 
-        .stat:hover {
-            transform: translateY(-6px);
-            background: rgba(255,255,255,.1);
-        }
+    text-align:center;
 
-        .stat strong {
-            display: block;
+    border-radius:20px;
 
-            color: #66d1ff;
+    border:1px solid #e0ebf3;
 
-            font-size: 29px;
-        }
+    box-shadow:0 8px 25px rgba(10,45,70,.05);
 
-        .stat span {
-            color: #b6c9da;
-            font-size: 13px;
-        }
+    transition:.35s;
+}
 
+.member-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(10,70,110,.1);
+}
 
-        /* ================= CONTACT ================= */
+.member-icon{
+    width:70px;
+    height:70px;
 
-        .contact {
-            background: linear-gradient(135deg, #f7fbff, #eef7fd);
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-        .contact-container {
-            max-width: 1100px;
-            margin: auto;
+    margin:auto auto 15px;
 
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
+    border-radius:50%;
 
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 18px;
+    background:#e8f7ff;
 
-            padding: 24px;
+    font-size:27px;
+}
 
-            background: white;
+.member-card h3{
+    color:#173e62;
+    font-size:15px;
+}
 
-            border-radius: 20px;
+.member-card span{
+    color:#738497;
+    font-size:12px;
+}
 
-            border: 1px solid #dfebf3;
+.member-section-title{
+    max-width:1050px;
+    margin:35px auto 15px;
 
-            color: #172f49;
+    color:#527086;
+    font-size:13px;
+    font-weight:800;
+}
 
-            transition: .35s;
+.members-grid{
+    max-width:1050px;
+    margin:auto;
 
-            box-shadow: 0 8px 25px rgba(15,50,80,.05);
-        }
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
 
-        .contact-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 35px rgba(20,90,140,.12);
-        }
+.alternate{
+    grid-template-columns:repeat(2,1fr);
+    max-width:540px;
+}
 
-        .contact-icon {
-            min-width: 58px;
-            width: 58px;
-            height: 58px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+/* =====================================================
+   COLLABORATORS
+===================================================== */
 
-            border-radius: 17px;
+.collaborators{
+    background:white;
+}
 
-            background: #e7f6ff;
+.collaborator-box{
+    max-width:900px;
+    margin:auto;
 
-            font-size: 26px;
-        }
+    padding:45px;
 
-        .contact-info h3 {
-            font-size: 15px;
-            color: #123d68;
-            margin-bottom: 3px;
-        }
+    text-align:center;
 
-        .contact-info p {
-            font-size: 13px;
-            color: #6b7c8d;
+    background:#f4faff;
 
-            direction: ltr;
-            text-align: right;
-            unicode-bidi: plaintext;
-        }
+    border-radius:24px;
 
-        .contact-info .fa-text {
-            direction: rtl;
-            text-align: right;
-        }
+    border:1px solid #dcecf5;
+}
 
+.collaborator-box p{
+    color:#66798b;
+    font-size:14px;
+}
 
-        /* ================= FOOTER ================= */
 
-        footer {
-            background: #030b17;
-            color: #9fb2c5;
+/* =====================================================
+   CONTACT
+===================================================== */
 
-            text-align: center;
+.contact{
+    background:#f4f9fc;
+}
 
-            padding: 35px 20px;
+.contact-grid{
+    max-width:1000px;
+    margin:auto;
 
-            font-size: 13px;
-        }
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
 
-        .footer-title {
-            color: white;
-            font-size: 16px;
-            font-weight: 700;
+.contact-card{
+    display:flex;
+    align-items:center;
+    gap:17px;
 
-            margin-bottom: 8px;
-        }
+    padding:22px;
 
+    background:white;
 
-        /* ================= ANIMATION ================= */
+    border-radius:19px;
 
-        @keyframes float {
+    border:1px solid #deebf2;
 
-            0%, 100% {
-                transform: translateY(0);
-            }
+    transition:.35s;
 
-            50% {
-                transform: translateY(-15px);
-            }
-        }
+    color:#173b5d;
+}
 
+.contact-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(15,75,110,.1);
+}
 
-        /* ================= RESPONSIVE ================= */
+.contact-icon{
+    min-width:57px;
+    width:57px;
+    height:57px;
 
-        @media (max-width: 900px) {
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+    background:#e7f7ff;
 
-            nav {
-                gap: 14px;
-            }
+    border-radius:16px;
 
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                min-height: auto;
-            }
+    font-size:25px;
+}
 
-            .hero-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+.contact-card h3{
+    font-size:14px;
+    margin-bottom:3px;
+}
 
-            .hero h2 {
-                font-size: 40px;
-            }
+.contact-card p{
+    color:#718295;
+    font-size:11px;
 
-            .hero-logo {
-                width: 280px;
-                height: 280px;
-                margin-top: 45px;
-            }
+    direction:ltr;
+    text-align:right;
 
-            .cards {
-                grid-template-columns: 1fr;
-            }
+    word-break:break-word;
+}
 
-            .achievement-highlight {
-                grid-template-columns: 1fr;
-            }
 
-            .achievement-gallery {
-                grid-template-columns: 1fr;
-            }
+/* =====================================================
+   FOOTER
+===================================================== */
 
-            .members-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+footer{
+    padding:35px 20px;
 
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    text-align:center;
 
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
+    background:#030c19;
 
-        }
+    color:#8fa5b9;
 
-        @media (max-width: 550px) {
+    font-size:12px;
+}
 
-            section {
-                padding: 65px 6%;
-            }
+footer strong{
+    display:block;
+    color:white;
+    font-size:15px;
+    margin-bottom:6px;
+}
 
-            .hero {
-                padding: 70px 6%;
-            }
 
-            .hero h2 {
-                font-size: 31px;
-            }
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
 
-            .hero p {
-                font-size: 14px;
-            }
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
 
-            .section-heading h2 {
-                font-size: 28px;
-            }
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
 
-            .members-grid,
-            .stats {
-                grid-template-columns: 1fr;
-            }
 
-            .achievements-box {
-                padding: 25px 18px;
-            }
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-            .about-text {
-                padding: 25px 20px;
-                font-size: 14px;
-            }
+@media(max-width:950px){
 
-            .contact-card {
-                padding: 18px;
-            }
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        justify-content:center;
+    }
 
-            .contact-info p {
-                font-size: 11px;
-                word-break: break-word;
-            }
+    .hero-content{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
 
-        }
+    .hero h2{
+        font-size:44px;
+    }
 
-    </style>
+    .hero-visual{
+        margin-top:45px;
+        transform:scale(.85);
+    }
 
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .achievement-list{
+        grid-template-columns:1fr;
+    }
+
+    .members-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    header{
+        height:68px;
+        padding:0 5%;
+    }
+
+    .logo{
+        width:44px;
+        height:44px;
+    }
+
+    .brand-text h1{
+        font-size:12px;
+    }
+
+    .brand-text span{
+        font-size:9px;
+    }
+
+    .menu-btn{
+        width:43px;
+        height:43px;
+    }
+
+    .hero{
+        padding:110px 6% 70px;
+        min-height:100vh;
+    }
+
+    .hero h2{
+        font-size:32px;
+        line-height:1.7;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .hero-visual{
+        width:320px;
+        height:320px;
+        transform:scale(.8);
+        margin-top:10px;
+    }
+
+    .hero-logo{
+        width:230px;
+        height:230px;
+    }
+
+    .hero-orbit{
+        width:300px;
+        height:140px;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .section-title h2{
+        font-size:27px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .achievement-box{
+        padding:22px 16px;
+    }
+
+    .achievement-text{
+        font-size:13px;
+        line-height:2.5;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .about-text{
+        padding:25px 19px;
+        font-size:13px;
+        line-height:2.6;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    /*
+       مهم:
+       در موبایل اعضای اصلی یکی‌یکی نمایش داده می‌شوند
+       و ترتیب HTML حفظ می‌شود.
+    */
+
+    .members-grid{
+        grid-template-columns:1fr;
+    }
+
+    .alternate{
+        grid-template-columns:1fr;
+        max-width:100%;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard{
+        width:300px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:380px){
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .brand-text{
+        display:none;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     PHYSICS BACKGROUND
+===================================================== -->
+
+<div id="physics-bg">
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+
+    <div class="orbit one"></div>
+    <div class="orbit two"></div>
+
+    <div class="physics-symbol symbol1">∑</div>
+    <div class="physics-symbol symbol2">λ</div>
+    <div class="physics-symbol symbol3">π</div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
     <div class="brand">
 
-        <div class="brand-logo">
+        <div class="logo">
             <img src="/images/logo.jpg" alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد">
         </div>
 
-        <div>
+        <div class="brand-text">
+
             <h1>انجمن علمی فیزیک</h1>
+
             <span>دانشگاه شهرکرد</span>
+
         </div>
 
     </div>
 
 
-    <nav>
-        <a href="#">خانه</a>
-        <a href="#about">درباره انجمن</a>
-        <a href="#activities">فعالیت‌ها</a>
-        <a href="#achievements">دستاوردها</a>
-        <a href="#members">اعضا</a>
-        <a href="#collaborators">اعضای همکار</a>
-        <a href="#contact">ارتباط با ما</a>
-    </nav>
+    <button class="menu-btn" onclick="openMenu()" aria-label="باز کردن منو">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
 
 </header>
 
 
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
 
-<!-- ================= HERO ================= -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-<section class="hero">
+
+<aside class="dashboard" id="dashboard">
+
+    <div class="dashboard-head">
+
+        <h2>داشبورد انجمن</h2>
+
+        <button class="close-btn" onclick="closeMenu()">×</button>
+
+    </div>
+
+
+    <p class="dashboard-subtitle">
+        دسترسی سریع به بخش‌های سایت
+    </p>
+
+
+    <a href="#home" onclick="closeMenu()">
+        <span class="dash-icon">⌂</span>
+        خانه
+    </a>
+
+    <a href="#about" onclick="closeMenu()">
+        <span class="dash-icon">ℹ️</span>
+        درباره انجمن
+    </a>
+
+    <a href="#activities" onclick="closeMenu()">
+        <span class="dash-icon">⚛️</span>
+        فعالیت‌های انجمن
+    </a>
+
+    <a href="#achievements" onclick="closeMenu()">
+        <span class="dash-icon">🏆</span>
+        دستاوردها و افتخارات
+    </a>
+
+    <a href="#members" onclick="closeMenu()">
+        <span class="dash-icon">👥</span>
+        اعضای انجمن
+    </a>
+
+    <a href="#collaborators" onclick="closeMenu()">
+        <span class="dash-icon">🤝</span>
+        اعضای همکار
+    </a>
+
+    <a href="#contact" onclick="closeMenu()">
+        <span class="dash-icon">📱</span>
+        ارتباط با ما
+    </a>
+
+
+    <p class="dashboard-subtitle">
+        شبکه‌های اجتماعی
+    </p>
+
+
+    <a href="https://t.me/physicsAssociation_sku"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <span class="dash-icon">✈️</span>
+        کانال تلگرام
+    </a>
+
+
+    <a href="https://eitaa.com/PhysicsAssociation_sku"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <span class="dash-icon">💬</span>
+        کانال ایتا
+    </a>
+
+
+    <a href="https://www.instagram.com/physicsassociation_sku"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <span class="dash-icon">📸</span>
+        اینستاگرام
+    </a>
+
+</aside>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="small-title">
+        <div class="badge">
             انجمن علمی فیزیک دانشگاه شهرکرد
         </div>
 
+
         <h2>
-            دنیای فیزیک را
+            فیزیک را
             <br>
             <span>با هم کشف کنیم</span>
         </h2>
 
+
         <p>
+            جایی برای یادگیری، پژوهش، تجربه، خلاقیت و کشف دنیای شگفت‌انگیز فیزیک.
             انجمن علمی فیزیک دانشگاه شهرکرد بستری برای فعالیت‌های علمی،
-            پژوهشی، آموزشی و دانشجویی است؛ جایی برای یادگیری، تجربه،
-            ایده‌پردازی و ساختن آینده‌ای علمی.
+            آموزشی و پژوهشی دانشجویان است.
         </p>
+
 
         <div class="hero-buttons">
 
-            <a href="#activities" class="btn primary">
-                فعالیت‌های انجمن
+            <a href="#about" class="btn btn-primary">
+                درباره انجمن
             </a>
 
-            <a href="#achievements" class="btn secondary">
-                دستاوردهای انجمن
+            <a href="#achievements" class="btn btn-secondary">
+                افتخارات انجمن
             </a>
 
         </div>
@@ -977,22 +1439,30 @@
     </div>
 
 
-    <img
-        class="hero-logo"
-        src="/images/logo.jpg"
-        alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد">
+    <div class="hero-visual">
+
+        <div class="hero-orbit"></div>
+
+        <img
+            src="/images/logo.jpg"
+            class="hero-logo"
+            alt="انجمن علمی فیزیک دانشگاه شهرکرد">
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= ACTIVITIES ================= -->
+<!-- =====================================================
+     ACTIVITIES
+===================================================== -->
 
-<section id="activities">
+<section class="activities" id="activities">
 
-    <div class="section-heading">
+    <div class="section-title reveal">
 
-        <span>WHAT WE DO</span>
+        <small>ACTIVITIES</small>
 
         <h2>فعالیت‌های انجمن</h2>
 
@@ -1014,48 +1484,52 @@
             </p>
         </div>
 
+
         <div class="card">
             <div class="card-icon">🎓</div>
-            <h3>آموزش و کارگاه‌ها</h3>
+            <h3>کارگاه‌ها و دوره‌های آموزشی</h3>
             <p>
-                برگزاری کارگاه‌ها، دوره‌های آموزشی، نشست‌های تخصصی
-                و برنامه‌های علمی.
+                برگزاری کارگاه‌ها و دوره‌های آموزشی در زمینه‌های مختلف
+                علمی و کاربردی.
             </p>
         </div>
 
-        <div class="card">
-            <div class="card-icon">📰</div>
-            <h3>نشریات علمی</h3>
-            <p>
-                تولید و انتشار محتوای علمی، مقالات، بولتن‌ها
-                و نشریات دانشجویی.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🧠</div>
-            <h3>مسابقات علمی</h3>
-            <p>
-                برگزاری مسابقات و چالش‌های علمی برای افزایش انگیزه
-                و خلاقیت دانشجویان.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">💡</div>
-            <h3>ایده و نوآوری</h3>
-            <p>
-                فراهم کردن بستری برای ارائه ایده‌ها و پروژه‌های
-                علمی دانشجویان.
-            </p>
-        </div>
 
         <div class="card">
             <div class="card-icon">🌌</div>
-            <h3>ترویج علم</h3>
+            <h3>نجوم و رصد آسمان</h3>
             <p>
-                معرفی جذاب و کاربردی علم فیزیک به دانشجویان
-                و علاقه‌مندان.
+                برگزاری برنامه‌های نجومی، رصد آسمان شب و آشنایی
+                با ابزارها و نرم‌افزارهای نجومی.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">📰</div>
+            <h3>نشریات و تولید محتوا</h3>
+            <p>
+                انتشار مطالب علمی، آموزشی، نشریات و بولتن‌های تخصصی.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3>مسابقات و رویدادها</h3>
+            <p>
+                برگزاری مسابقات و رویدادهای علمی و فرهنگی برای
+                افزایش مشارکت دانشجویان.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>فیزیک و الکترونیک</h3>
+            <p>
+                آشنایی با مباحث مختلف فیزیک، الکترونیک و کاربردهای
+                فناوری در علوم پایه.
             </p>
         </div>
 
@@ -1065,13 +1539,15 @@
 
 
 
-<!-- ================= ACHIEVEMENTS ================= -->
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
 
 <section class="achievements" id="achievements">
 
-    <div class="section-heading">
+    <div class="section-title reveal">
 
-        <span>ACHIEVEMENTS & HONORS</span>
+        <small>ACHIEVEMENTS</small>
 
         <h2>دستاوردها و افتخارات</h2>
 
@@ -1082,9 +1558,9 @@
     </div>
 
 
-    <div class="achievements-box">
+    <div class="achievement-box reveal">
 
-        <div class="achievement-intro">
+        <div class="achievement-text">
 
             انجمن علمی فیزیک دانشگاه شهرکرد در هجدهمین جشنواره بین‌المللی
             حرکت ۱۴۰۳–۱۴۰۴ در تبریز موفق به کسب چندین عنوان شد.
@@ -1092,11 +1568,12 @@
         </div>
 
 
-        <div class="achievement-highlight">
+        <div class="achievement-list">
+
 
             <div class="achievement-item">
 
-                <div class="icon">🏆</div>
+                <div class="achievement-icon">🏆</div>
 
                 <h3>
                     کسب رتبه‌ی برگزیده در بخش سکوی حرکت انجمن‌های علمی
@@ -1108,7 +1585,7 @@
 
             <div class="achievement-item">
 
-                <div class="icon">🥇</div>
+                <div class="achievement-icon">🥇</div>
 
                 <h3>
                     کسب رتبه‌ی برگزیده در بخش «رویداد علمی» گروه علوم پایه،
@@ -1120,7 +1597,7 @@
 
             <div class="achievement-item">
 
-                <div class="icon">🎓</div>
+                <div class="achievement-icon">🎓</div>
 
                 <h3>
                     کسب رتبه‌ی شایسته تقدیر در بخش «آموزشی» گروه علوم پایه،
@@ -1148,39 +1625,15 @@
         </div>
 
 
-        <div class="achievement-gallery">
+        <div class="gallery">
 
-            <div class="achievement-photo">
+            <img
+                src="/images/harkat1.jpg"
+                alt="هجدهمین جشنواره بین‌المللی حرکت">
 
-                <img
-                    src="/images/harkat1.jpg"
-                    alt="هجدهمین جشنواره بین‌المللی حرکت">
-
-                <p>هجدهمین جشنواره بین‌المللی حرکت</p>
-
-            </div>
-
-
-            <div class="achievement-photo">
-
-                <img
-                    src="/images/harkat2.jpg"
-                    alt="افتخارات انجمن علمی فیزیک دانشگاه شهرکرد">
-
-                <p>افتخارات انجمن علمی فیزیک دانشگاه شهرکرد</p>
-
-            </div>
-
-        </div>
-
-
-        <div class="festival-note">
-
-            <strong>هجدهمین جشنواره بین‌المللی حرکت</strong>
-
-            <br>
-
-            تبریز | سال تحصیلی ۱۴۰۳–۱۴۰۴
+            <img
+                src="/images/harkat2.jpg"
+                alt="افتخارات انجمن علمی فیزیک دانشگاه شهرکرد">
 
         </div>
 
@@ -1190,152 +1643,15 @@
 
 
 
-<!-- ================= MEMBERS ================= -->
-
-<section class="members" id="members">
-
-    <div class="section-heading">
-
-        <span>OUR TEAM</span>
-
-        <h2>اعضای انجمن</h2>
-
-        <p>
-            شورای مرکزی انجمن علمی فیزیک دانشگاه شهرکرد
-        </p>
-
-    </div>
-
-
-    <div class="member-card secretary">
-
-        <div class="member-icon">👩‍🔬</div>
-
-        <h3>مائده ابراهیمی</h3>
-
-        <span>دبیر انجمن علمی فیزیک</span>
-
-    </div>
-
-
-    <div class="members-grid">
-
-        <div class="member-card">
-
-            <div class="member-icon">🔬</div>
-
-            <h3>ابوالفضل اکبری</h3>
-
-            <span>مسئول پژوهشی</span>
-
-        </div>
-
-
-        <div class="member-card">
-
-            <div class="member-icon">📚</div>
-
-            <h3>محمدطاها خلیلی</h3>
-
-            <span>مسئول آموزشی</span>
-
-        </div>
-
-
-        <div class="member-card">
-
-            <div class="member-icon">👩‍🎓</div>
-
-            <h3>فاطمه کاظمی</h3>
-
-            <span>نائب دبیر</span>
-
-        </div>
-
-
-        <div class="member-card">
-
-            <div class="member-icon">⚙️</div>
-
-            <h3>مهشید دلفی</h3>
-
-            <span>مسئول اجرایی</span>
-
-        </div>
-
-
-        <div class="member-card">
-
-            <div class="member-icon">⚙️</div>
-
-            <h3>نیلوفر صمدانی</h3>
-
-            <span>مسئول اجرایی</span>
-
-        </div>
-
-
-        <div class="member-card">
-
-            <div class="member-icon">📰</div>
-
-            <h3>مهشید دلفی</h3>
-
-            <span>مسئول نشریات</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= COLLABORATORS ================= -->
-
-<section class="collaborators" id="collaborators">
-
-    <div class="section-heading">
-
-        <span>COLLABORATORS</span>
-
-        <h2>اعضای همکار</h2>
-
-        <p>
-            دانشجویان و علاقه‌مندانی که در فعالیت‌های انجمن همکاری می‌کنند
-        </p>
-
-    </div>
-
-
-    <div class="collaborators-box">
-
-        <p>
-
-            اعضای همکار انجمن در برگزاری رویدادها، برنامه‌های آموزشی،
-            فعالیت‌های پژوهشی و تولید محتوای علمی مشارکت دارند.
-
-        </p>
-
-        <div class="collaborator-placeholder">
-
-            ✨ همراهان انجمن علمی فیزیک
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= ABOUT ================= -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section class="about" id="about">
 
-    <div class="section-heading">
+    <div class="section-title reveal">
 
-        <span>ABOUT US</span>
+        <small>ABOUT US</small>
 
         <h2>درباره انجمن علمی فیزیک دانشگاه شهرکرد</h2>
 
@@ -1348,7 +1664,7 @@
 
     <div class="about-content">
 
-        <div class="about-text">
+        <div class="about-text reveal">
 
             <p>
 
@@ -1427,41 +1743,26 @@
         </div>
 
 
-        <div class="stats">
+        <div class="stats reveal">
 
             <div class="stat">
-
                 <strong>۱۴۰۳</strong>
-
                 <span>سال فعالیت</span>
-
             </div>
 
-
             <div class="stat">
-
                 <strong>۳</strong>
-
                 <span>عنوان در جشنواره حرکت</span>
-
             </div>
 
-
             <div class="stat">
-
                 <strong>۱</strong>
-
                 <span>رتبه برگزیده دانشگاهی</span>
-
             </div>
 
-
             <div class="stat">
-
                 <strong>∞</strong>
-
                 <span>ایده برای آینده</span>
-
             </div>
 
         </div>
@@ -1472,139 +1773,124 @@
 
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =====================================================
+     MEMBERS
+===================================================== -->
 
-<section class="contact" id="contact">
+<section class="members" id="members">
 
-    <div class="section-heading">
+    <div class="section-title reveal">
 
-        <span>CONTACT US</span>
+        <small>OUR TEAM</small>
 
-        <h2>راه‌های ارتباط با ما</h2>
+        <h2>اعضای انجمن</h2>
 
         <p>
-            برای اطلاع از برنامه‌ها، رویدادها و فعالیت‌های انجمن با ما در ارتباط باشید
+            شورای مرکزی انجمن علمی فیزیک دانشگاه شهرکرد
         </p>
 
     </div>
 
 
-    <div class="contact-container">
+    <!-- دبیر -->
+
+    <div class="secretary member-card reveal">
+
+        <div class="member-icon">👩‍🔬</div>
+
+        <h3>مائده ابراهیمی</h3>
+
+        <span>دبیر انجمن علمی فیزیک</span>
+
+    </div>
 
 
-        <a
-            class="contact-card"
-            href="https://t.me/physicsAssociation_sku"
-            target="_blank"
-            rel="noopener noreferrer">
+    <!-- اعضای اصلی -->
 
-            <div class="contact-icon">✈️</div>
-
-            <div class="contact-info">
-
-                <h3>کانال تلگرام انجمن</h3>
-
-                <p>t.me/physicsAssociation_sku</p>
-
-            </div>
-
-        </a>
+    <div class="member-section-title">
+        اعضای اصلی
+    </div>
 
 
-
-        <a
-            class="contact-card"
-            href="https://eitaa.com/PhysicsAssociation_sku"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            <div class="contact-icon">💬</div>
-
-            <div class="contact-info">
-
-                <h3>کانال ایتای انجمن</h3>
-
-                <p>eitaa.com/PhysicsAssociation_sku</p>
-
-            </div>
-
-        </a>
+    <div class="members-grid">
 
 
+        <div class="member-card reveal">
 
-        <a
-            class="contact-card"
-            href="https://www.instagram.com/physicsassociation_sku"
-            target="_blank"
-            rel="noopener noreferrer">
+            <div class="member-icon">👩‍🎓</div>
 
-            <div class="contact-icon">📸</div>
+            <h3>فاطمه کاظمی</h3>
 
-            <div class="contact-info">
-
-                <h3>صفحه اینستاگرام انجمن</h3>
-
-                <p>physicsassociation_sku</p>
-
-            </div>
-
-        </a>
-
-
-
-        <a
-            class="contact-card"
-            href="https://t.me/physics_Association_sku"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            <div class="contact-icon">👩‍💻</div>
-
-            <div class="contact-info">
-
-                <h3>ارتباط با دبیر و ادمین انجمن</h3>
-
-                <p>@physics_Association_sku</p>
-
-            </div>
-
-        </a>
-
-
-
-        <a
-            class="contact-card"
-            href="mailto:physicsassociationsku@gmail.com">
-
-            <div class="contact-icon">✉️</div>
-
-            <div class="contact-info">
-
-                <h3>پست الکترونیک رسمی انجمن</h3>
-
-                <p>physicsassociationsku@gmail.com</p>
-
-            </div>
-
-        </a>
-
-
-        <div class="contact-card">
-
-            <div class="contact-icon">🔭</div>
-
-            <div class="contact-info">
-
-                <h3>انجمن علمی فیزیک دانشگاه شهرکرد</h3>
-
-                <p class="fa-text">
-                    همراه ما باشید؛ علم را تجربه کنیم و آینده را بسازیم.
-                </p>
-
-            </div>
+            <span>نائب دبیر</span>
 
         </div>
 
+
+        <div class="member-card reveal">
+
+            <div class="member-icon">🔬</div>
+
+            <h3>ابوالفضل اکبری</h3>
+
+            <span>مسئول پژوهشی</span>
+
+        </div>
+
+
+        <div class="member-card reveal">
+
+            <div class="member-icon">📚</div>
+
+            <h3>محمدطاها خلیلی</h3>
+
+            <span>مسئول آموزشی</span>
+
+        </div>
+
+
+        <div class="member-card reveal">
+
+            <div class="member-icon">📰</div>
+
+            <h3>مهشید دلفی</h3>
+
+            <span>مسئول نشریات</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- اعضای علی البدل -->
+
+    <div class="member-section-title">
+        اعضای علی‌البدل
+    </div>
+
+
+    <div class="members-grid alternate">
+
+
+        <div class="member-card reveal">
+
+            <div class="member-icon">⚙️</div>
+
+            <h3>مهشید دلفی</h3>
+
+            <span>عضو علی‌البدل</span>
+
+        </div>
+
+
+        <div class="member-card reveal">
+
+            <div class="member-icon">⚙️</div>
+
+            <h3>نیلوفر صمدانی</h3>
+
+            <span>عضو علی‌البدل</span>
+
+        </div>
 
     </div>
 
@@ -1612,17 +1898,259 @@
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     COLLABORATORS
+===================================================== -->
+
+<section class="collaborators" id="collaborators">
+
+    <div class="section-title reveal">
+
+        <small>COLLABORATORS</small>
+
+        <h2>اعضای همکار</h2>
+
+        <p>
+            همراهان انجمن در مسیر فعالیت‌های علمی
+        </p>
+
+    </div>
+
+
+    <div class="collaborator-box reveal">
+
+        <p>
+
+            اعضای همکار انجمن در برگزاری رویدادها، برنامه‌های آموزشی،
+            فعالیت‌های پژوهشی و تولید محتوای علمی مشارکت دارند.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title reveal">
+
+        <small>CONTACT US</small>
+
+        <h2>راه‌های ارتباط با ما</h2>
+
+        <p>
+            برای اطلاع از برنامه‌ها و فعالیت‌های انجمن با ما در ارتباط باشید
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <a
+            href="https://t.me/physicsAssociation_sku"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card reveal">
+
+            <div class="contact-icon">✈️</div>
+
+            <div>
+                <h3>کانال تلگرام انجمن</h3>
+                <p>t.me/physicsAssociation_sku</p>
+            </div>
+
+        </a>
+
+
+        <a
+            href="https://eitaa.com/PhysicsAssociation_sku"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card reveal">
+
+            <div class="contact-icon">💬</div>
+
+            <div>
+                <h3>کانال ایتای انجمن</h3>
+                <p>eitaa.com/PhysicsAssociation_sku</p>
+            </div>
+
+        </a>
+
+
+        <a
+            href="https://www.instagram.com/physicsassociation_sku"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card reveal">
+
+            <div class="contact-icon">📸</div>
+
+            <div>
+                <h3>صفحه اینستاگرام انجمن</h3>
+                <p>physicsassociation_sku</p>
+            </div>
+
+        </a>
+
+
+        <a
+            href="https://t.me/physics_Association_sku"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card reveal">
+
+            <div class="contact-icon">👩‍💻</div>
+
+            <div>
+                <h3>ارتباط با دبیر / ادمین</h3>
+                <p>@physics_Association_sku</p>
+            </div>
+
+        </a>
+
+
+        <a
+            href="mailto:physicsassociationsku@gmail.com"
+            class="contact-card reveal">
+
+            <div class="contact-icon">✉️</div>
+
+            <div>
+                <h3>پست الکترونیک رسمی انجمن</h3>
+                <p>physicsassociationsku@gmail.com</p>
+            </div>
+
+        </a>
+
+
+        <div class="contact-card reveal">
+
+            <div class="contact-icon">🔭</div>
+
+            <div>
+                <h3>انجمن علمی فیزیک دانشگاه شهرکرد</h3>
+                <p>همراه ما باشید؛ علم را تجربه کنیم.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    <div class="footer-title">
+    <strong>
         انجمن علمی فیزیک دانشگاه شهرکرد
-    </div>
+    </strong>
 
     تمامی حقوق این وب‌سایت متعلق به انجمن علمی فیزیک دانشگاه شهرکرد است.
 
 </footer>
+
+
+
+<script>
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+const dashboard = document.getElementById("dashboard");
+const overlay = document.getElementById("overlay");
+
+function openMenu(){
+
+    dashboard.classList.add("active");
+    overlay.classList.add("active");
+
+}
+
+function closeMenu(){
+
+    dashboard.classList.remove("active");
+    overlay.classList.remove("active");
+
+}
+
+
+/* =====================================================
+   ESC CLOSE MENU
+===================================================== */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+        closeMenu();
+    }
+
+});
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+
+document.querySelectorAll(".reveal, .card").forEach(el => {
+
+    observer.observe(el);
+
+});
+
+
+/* =====================================================
+   CLOSE MENU AFTER CLICK
+===================================================== */
+
+document.querySelectorAll(".dashboard a[href^='#']").forEach(link => {
+
+    link.addEventListener("click",function(){
+
+        setTimeout(closeMenu,200);
+
+    });
+
+});
+
+</script>
 
 
 </body>
