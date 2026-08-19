@@ -1,7 +1,6 @@
 ```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +14,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
 *{
     margin:0;
     padding:0;
@@ -46,9 +40,9 @@ button{
 }
 
 
-/* =====================================================
-   PARTICLE / PHYSICS BACKGROUND
-===================================================== */
+/* =========================
+   BACKGROUND
+========================= */
 
 #physics-bg{
     position:fixed;
@@ -121,9 +115,9 @@ button{
 .symbol3{top:55%;right:42%;font-size:55px}
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header{
     position:fixed;
@@ -178,9 +172,9 @@ header{
 }
 
 
-/* =====================================================
-   DASHBOARD BUTTON
-===================================================== */
+/* =========================
+   MENU BUTTON
+========================= */
 
 .menu-btn{
     width:48px;
@@ -216,9 +210,9 @@ header{
 }
 
 
-/* =====================================================
-   SIDE DASHBOARD
-===================================================== */
+/* =========================
+   DASHBOARD
+========================= */
 
 .overlay{
     position:fixed;
@@ -339,9 +333,9 @@ header{
 }
 
 
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero{
     min-height:100vh;
@@ -409,7 +403,6 @@ header{
 
 .hero h2 span{
     color:#55ceff;
-
     text-shadow:0 0 30px rgba(60,200,255,.3);
 }
 
@@ -461,9 +454,9 @@ header{
 }
 
 
-/* =====================================================
+/* =========================
    HERO LOGO
-===================================================== */
+========================= */
 
 .hero-visual{
     position:relative;
@@ -517,9 +510,9 @@ header{
 }
 
 
-/* =====================================================
-   GENERAL SECTION
-===================================================== */
+/* =========================
+   SECTIONS
+========================= */
 
 section{
     padding:100px 8%;
@@ -551,9 +544,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    ACTIVITIES
-===================================================== */
+========================= */
 
 .activities{
     background:#f5f9fc;
@@ -625,9 +618,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    ACHIEVEMENTS
-===================================================== */
+========================= */
 
 .achievements{
     background:
@@ -737,9 +730,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    ABOUT
-===================================================== */
+========================= */
 
 .about{
     background:
@@ -791,11 +784,15 @@ section{
     color:#64d5ff;
 }
 
+
+/* =========================
+   STATS
+========================= */
+
 .stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:18px;
-
     margin-top:30px;
 }
 
@@ -820,18 +817,19 @@ section{
 .stat strong{
     display:block;
     color:#5dd2ff;
-    font-size:28px;
+    font-size:30px;
 }
 
 .stat span{
     color:#a9bfd1;
     font-size:12px;
+    line-height:1.8;
 }
 
 
-/* =====================================================
+/* =========================
    MEMBERS
-===================================================== */
+========================= */
 
 .members{
     background:#f4f8fb;
@@ -914,9 +912,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    COLLABORATORS
-===================================================== */
+========================= */
 
 .collaborators{
     background:white;
@@ -943,9 +941,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    CONTACT
-===================================================== */
+========================= */
 
 .contact{
     background:#f4f9fc;
@@ -1015,9 +1013,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer{
     padding:35px 20px;
@@ -1039,9 +1037,9 @@ footer strong{
 }
 
 
-/* =====================================================
-   SCROLL ANIMATION
-===================================================== */
+/* =========================
+   ANIMATION
+========================= */
 
 .reveal{
     opacity:0;
@@ -1055,9 +1053,9 @@ footer strong{
 }
 
 
-/* =====================================================
+/* =========================
    RESPONSIVE
-===================================================== */
+========================= */
 
 @media(max-width:950px){
 
@@ -1192,12 +1190,6 @@ footer strong{
         grid-template-columns:1fr 1fr;
     }
 
-    /*
-       مهم:
-       در موبایل اعضای اصلی یکی‌یکی نمایش داده می‌شوند
-       و ترتیب HTML حفظ می‌شود.
-    */
-
     .members-grid{
         grid-template-columns:1fr;
     }
@@ -1217,10 +1209,6 @@ footer strong{
 
 }
 
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
 
 @media(max-width:380px){
 
@@ -1244,11 +1232,6 @@ footer strong{
 
 <body>
 
-
-<!-- =====================================================
-     PHYSICS BACKGROUND
-===================================================== -->
-
 <div id="physics-bg">
 
     <div class="particle p1"></div>
@@ -1269,30 +1252,26 @@ footer strong{
 </div>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
 
     <div class="brand">
 
         <div class="logo">
-            <img src="/images/logo.jpg" alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد">
+            <img src="/images/logo.jpg"
+                 alt="لوگوی انجمن علمی فیزیک دانشگاه شهرکرد">
         </div>
 
         <div class="brand-text">
-
             <h1>انجمن علمی فیزیک</h1>
-
             <span>دانشگاه شهرکرد</span>
-
         </div>
 
     </div>
 
 
-    <button class="menu-btn" onclick="openMenu()" aria-label="باز کردن منو">
+    <button class="menu-btn"
+            onclick="openMenu()"
+            aria-label="باز کردن منو">
 
         <span></span>
         <span></span>
@@ -1303,11 +1282,10 @@ footer strong{
 </header>
 
 
-<!-- =====================================================
-     DASHBOARD
-===================================================== -->
-
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="overlay"
+     id="overlay"
+     onclick="closeMenu()">
+</div>
 
 
 <aside class="dashboard" id="dashboard">
@@ -1316,7 +1294,10 @@ footer strong{
 
         <h2>داشبورد انجمن</h2>
 
-        <button class="close-btn" onclick="closeMenu()">×</button>
+        <button class="close-btn"
+                onclick="closeMenu()">
+            ×
+        </button>
 
     </div>
 
@@ -1397,10 +1378,6 @@ footer strong{
 
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <section class="hero" id="home">
 
     <div class="hero-content">
@@ -1426,11 +1403,13 @@ footer strong{
 
         <div class="hero-buttons">
 
-            <a href="#about" class="btn btn-primary">
+            <a href="#about"
+               class="btn btn-primary">
                 درباره انجمن
             </a>
 
-            <a href="#achievements" class="btn btn-secondary">
+            <a href="#achievements"
+               class="btn btn-secondary">
                 افتخارات انجمن
             </a>
 
@@ -1443,20 +1422,15 @@ footer strong{
 
         <div class="hero-orbit"></div>
 
-        <img
-            src="/images/logo.jpg"
-            class="hero-logo"
-            alt="انجمن علمی فیزیک دانشگاه شهرکرد">
+        <img src="/images/logo.jpg"
+             class="hero-logo"
+             alt="انجمن علمی فیزیک دانشگاه شهرکرد">
 
     </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     ACTIVITIES
-===================================================== -->
 
 <section class="activities" id="activities">
 
@@ -1476,61 +1450,85 @@ footer strong{
     <div class="cards">
 
         <div class="card">
+
             <div class="card-icon">🔬</div>
+
             <h3>فعالیت‌های پژوهشی</h3>
+
             <p>
                 ایجاد فرصت برای مشارکت دانشجویان در فعالیت‌های پژوهشی
                 و علمی حوزه فیزیک.
             </p>
+
         </div>
 
 
         <div class="card">
+
             <div class="card-icon">🎓</div>
+
             <h3>کارگاه‌ها و دوره‌های آموزشی</h3>
+
             <p>
                 برگزاری کارگاه‌ها و دوره‌های آموزشی در زمینه‌های مختلف
                 علمی و کاربردی.
             </p>
+
         </div>
 
 
         <div class="card">
+
             <div class="card-icon">🌌</div>
+
             <h3>نجوم و رصد آسمان</h3>
+
             <p>
                 برگزاری برنامه‌های نجومی، رصد آسمان شب و آشنایی
                 با ابزارها و نرم‌افزارهای نجومی.
             </p>
+
         </div>
 
 
         <div class="card">
+
             <div class="card-icon">📰</div>
+
             <h3>نشریات و تولید محتوا</h3>
+
             <p>
                 انتشار مطالب علمی، آموزشی، نشریات و بولتن‌های تخصصی.
             </p>
+
         </div>
 
 
         <div class="card">
+
             <div class="card-icon">🏆</div>
+
             <h3>مسابقات و رویدادها</h3>
+
             <p>
                 برگزاری مسابقات و رویدادهای علمی و فرهنگی برای
                 افزایش مشارکت دانشجویان.
             </p>
+
         </div>
 
 
         <div class="card">
+
             <div class="card-icon">⚡</div>
+
             <h3>فیزیک و الکترونیک</h3>
+
             <p>
                 آشنایی با مباحث مختلف فیزیک، الکترونیک و کاربردهای
                 فناوری در علوم پایه.
             </p>
+
         </div>
 
     </div>
@@ -1538,10 +1536,6 @@ footer strong{
 </section>
 
 
-
-<!-- =====================================================
-     ACHIEVEMENTS
-===================================================== -->
 
 <section class="achievements" id="achievements">
 
@@ -1569,7 +1563,6 @@ footer strong{
 
 
         <div class="achievement-list">
-
 
             <div class="achievement-item">
 
@@ -1627,13 +1620,11 @@ footer strong{
 
         <div class="gallery">
 
-            <img
-                src="/images/harkat1.jpg"
-                alt="هجدهمین جشنواره بین‌المللی حرکت">
+            <img src="/images/harkat1.jpg"
+                 alt="هجدهمین جشنواره بین‌المللی حرکت">
 
-            <img
-                src="/images/harkat2.jpg"
-                alt="افتخارات انجمن علمی فیزیک دانشگاه شهرکرد">
+            <img src="/images/harkat2.jpg"
+                 alt="افتخارات انجمن علمی فیزیک دانشگاه شهرکرد">
 
         </div>
 
@@ -1642,10 +1633,6 @@ footer strong{
 </section>
 
 
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
 
 <section class="about" id="about">
 
@@ -1667,19 +1654,16 @@ footer strong{
         <div class="about-text reveal">
 
             <p>
-
                 <strong>انجمن علمی فیزیک دانشگاه شهرکرد</strong>
                 با هدف گسترش فعالیت‌های علمی، آموزشی و پژوهشی و ایجاد فضایی پویا
                 برای تعامل و یادگیری دانشجویان شکل گرفته است. این انجمن تلاش می‌کند
                 با برگزاری برنامه‌های متنوع، زمینه‌ای برای آشنایی بیشتر دانشجویان
                 با جنبه‌های مختلف علم فیزیک، مهارت‌های علمی و کاربردهای این دانش
                 در دنیای واقعی فراهم کند.
-
             </p>
 
 
             <p>
-
                 فعالیت‌های انجمن در حوزه‌های مختلفی از جمله
                 <strong>
                     برگزاری کارگاه‌ها و دوره‌های آموزشی، نشست‌های علمی و تخصصی،
@@ -1687,12 +1671,10 @@ footer strong{
                     فعالیت‌های پژوهشی، بازدیدهای علمی و تولید محتوای تخصصی و آموزشی
                 </strong>
                 دنبال می‌شود.
-
             </p>
 
 
             <p>
-
                 در بخش آموزشی، انجمن با برگزاری کارگاه‌هایی در زمینه‌هایی مانند
                 <strong>
                     برنامه‌نویسی پایتون و کاربرد آن در فیزیک، نجوم و رصد آسمان شب،
@@ -1701,12 +1683,10 @@ footer strong{
                 </strong>
                 تلاش می‌کند دانشجویان را با مهارت‌ها و ابزارهای کاربردی در کنار
                 مباحث نظری آشنا کند.
-
             </p>
 
 
             <p>
-
                 همچنین برگزاری
                 <strong>
                     نشست‌های علمی با اعضای گروه فیزیک، برنامه‌های علمی و پژوهشی،
@@ -1714,55 +1694,52 @@ footer strong{
                 </strong>
                 از دیگر فعالیت‌های انجمن است که با هدف تقویت مشارکت دانشجویان
                 و ایجاد تجربه‌ای متفاوت از فعالیت‌های دانشگاهی برگزار می‌شوند.
-
             </p>
 
 
             <p>
-
                 بخش مهمی از فعالیت انجمن نیز به
                 <strong>نشریات و تولید محتوای علمی</strong>
                 اختصاص دارد. انتشار مطالب علمی و آموزشی، نشریات و بولتن‌های تخصصی
                 و ارائه محتوای مرتبط با فیزیک، نجوم و علوم وابسته، بخشی از تلاش
                 انجمن برای ترویج علم و ایجاد ارتباط میان دانشجویان و دنیای علم است.
-
             </p>
 
 
             <p>
-
                 انجمن علمی فیزیک دانشگاه شهرکرد تلاش می‌کند فیزیک را فراتر از
                 چارچوب کلاس و کتاب درسی دنبال کند؛
                 <strong>
                     جایی برای یادگیری، تجربه، پژوهش، خلاقیت و ساختن نگاهی عمیق‌تر
                     به جهان پیرامون.
                 </strong>
-
             </p>
 
         </div>
 
 
+        <!-- آمار اصلاح شد -->
+
         <div class="stats reveal">
 
             <div class="stat">
-                <strong>۱۴۰۳</strong>
-                <span>سال فعالیت</span>
+                <strong>∞</strong>
+                <span>محورهای اصلی فعالیت</span>
             </div>
 
             <div class="stat">
                 <strong>۳</strong>
-                <span>عنوان در جشنواره حرکت</span>
+                <span>عنوان در جشنواره بین‌المللی حرکت</span>
             </div>
 
             <div class="stat">
-                <strong>۱</strong>
-                <span>رتبه برگزیده دانشگاهی</span>
+                <strong>۴</strong>
+                <span>رتبه در جشنواره درون‌دانشگاهی حرکت</span>
             </div>
 
             <div class="stat">
                 <strong>∞</strong>
-                <span>ایده برای آینده</span>
+                <span>مسیر بی‌پایان علم و پژوهش</span>
             </div>
 
         </div>
@@ -1772,10 +1749,6 @@ footer strong{
 </section>
 
 
-
-<!-- =====================================================
-     MEMBERS
-===================================================== -->
 
 <section class="members" id="members">
 
@@ -1813,7 +1786,6 @@ footer strong{
 
 
     <div class="members-grid">
-
 
         <div class="member-card reveal">
 
@@ -1861,7 +1833,7 @@ footer strong{
     </div>
 
 
-    <!-- اعضای علی البدل -->
+    <!-- اعضای علی‌البدل -->
 
     <div class="member-section-title">
         اعضای علی‌البدل
@@ -1869,18 +1841,6 @@ footer strong{
 
 
     <div class="members-grid alternate">
-
-
-        <div class="member-card reveal">
-
-            <div class="member-icon">⚙️</div>
-
-            <h3>مهشید دلفی</h3>
-
-            <span>عضو علی‌البدل</span>
-
-        </div>
-
 
         <div class="member-card reveal">
 
@@ -1892,15 +1852,22 @@ footer strong{
 
         </div>
 
+
+        <div class="member-card reveal">
+
+            <div class="member-icon">⚙️</div>
+
+            <h3>آیدا قربانی</h3>
+
+            <span>عضو علی‌البدل</span>
+
+        </div>
+
     </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     COLLABORATORS
-===================================================== -->
 
 <section class="collaborators" id="collaborators">
 
@@ -1920,10 +1887,8 @@ footer strong{
     <div class="collaborator-box reveal">
 
         <p>
-
             اعضای همکار انجمن در برگزاری رویدادها، برنامه‌های آموزشی،
             فعالیت‌های پژوهشی و تولید محتوای علمی مشارکت دارند.
-
         </p>
 
     </div>
@@ -1931,10 +1896,6 @@ footer strong{
 </section>
 
 
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
 
 <section class="contact" id="contact">
 
@@ -1954,11 +1915,10 @@ footer strong{
     <div class="contact-grid">
 
 
-        <a
-            href="https://t.me/physicsAssociation_sku"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card reveal">
+        <a href="https://t.me/physicsAssociation_sku"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card reveal">
 
             <div class="contact-icon">✈️</div>
 
@@ -1970,11 +1930,10 @@ footer strong{
         </a>
 
 
-        <a
-            href="https://eitaa.com/PhysicsAssociation_sku"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card reveal">
+        <a href="https://eitaa.com/PhysicsAssociation_sku"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card reveal">
 
             <div class="contact-icon">💬</div>
 
@@ -1986,11 +1945,10 @@ footer strong{
         </a>
 
 
-        <a
-            href="https://www.instagram.com/physicsassociation_sku"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card reveal">
+        <a href="https://www.instagram.com/physicsassociation_sku"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card reveal">
 
             <div class="contact-icon">📸</div>
 
@@ -2002,11 +1960,10 @@ footer strong{
         </a>
 
 
-        <a
-            href="https://t.me/physics_Association_sku"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-card reveal">
+        <a href="https://t.me/physics_Association_sku"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="contact-card reveal">
 
             <div class="contact-icon">👩‍💻</div>
 
@@ -2018,9 +1975,8 @@ footer strong{
         </a>
 
 
-        <a
-            href="mailto:physicsassociationsku@gmail.com"
-            class="contact-card reveal">
+        <a href="mailto:physicsassociationsku@gmail.com"
+           class="contact-card reveal">
 
             <div class="contact-icon">✉️</div>
 
@@ -2049,10 +2005,6 @@ footer strong{
 
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
 
     <strong>
@@ -2067,12 +2019,9 @@ footer strong{
 
 <script>
 
-/* =====================================================
-   DASHBOARD
-===================================================== */
-
 const dashboard = document.getElementById("dashboard");
 const overlay = document.getElementById("overlay");
+
 
 function openMenu(){
 
@@ -2080,6 +2029,7 @@ function openMenu(){
     overlay.classList.add("active");
 
 }
+
 
 function closeMenu(){
 
@@ -2089,10 +2039,6 @@ function closeMenu(){
 }
 
 
-/* =====================================================
-   ESC CLOSE MENU
-===================================================== */
-
 document.addEventListener("keydown",function(e){
 
     if(e.key==="Escape"){
@@ -2101,10 +2047,6 @@ document.addEventListener("keydown",function(e){
 
 });
 
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
 
 const observer = new IntersectionObserver(
 
@@ -2135,10 +2077,6 @@ document.querySelectorAll(".reveal, .card").forEach(el => {
 
 });
 
-
-/* =====================================================
-   CLOSE MENU AFTER CLICK
-===================================================== */
 
 document.querySelectorAll(".dashboard a[href^='#']").forEach(link => {
 
